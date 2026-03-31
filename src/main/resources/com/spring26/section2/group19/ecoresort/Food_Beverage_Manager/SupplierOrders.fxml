@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.Food_Beverage_Manager.SupplierOrdersController">
+
+    <children>
+
+        <Label layoutX="240" layoutY="20" text="Supplier Orders Management" style="-fx-font-size: 20px;" />
+
+        <!-- Supplier Name -->
+        <Label layoutX="50" layoutY="80" text="Supplier Name:" />
+        <TextField fx:id="supplierField" layoutX="200" layoutY="75" prefWidth="200"/>
+
+        <!-- Items -->
+        <Label layoutX="50" layoutY="130" text="Food Items:" />
+        <TextArea fx:id="itemsArea" layoutX="200" layoutY="125" prefWidth="200" prefHeight="80"/>
+
+        <!-- Quantity -->
+        <Label layoutX="50" layoutY="230" text="Quantity:" />
+        <TextField fx:id="qtyField" layoutX="200" layoutY="225" prefWidth="200"/>
+
+        <!-- Buttons -->
+        <Button layoutX="200" layoutY="280" text="Place Order" onAction="#handleOrder"/>
+        <Button layoutX="330" layoutY="280" text="Clear" onAction="#handleClear"/>
+
+        <!-- Table -->
+        <TableView fx:id="tableView" layoutX="50" layoutY="350" prefWidth="700" prefHeight="220">
+
+            <columns>
+                <TableColumn fx:id="colSupplier" text="Supplier" prefWidth="150"/>
+                <TableColumn fx:id="colItems" text="Items" prefWidth="250"/>
+                <TableColumn fx:id="colQty" text="Quantity" prefWidth="150"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="150"/>
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>
