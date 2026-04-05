@@ -5,4 +5,6 @@ module com.spring26.section2.group19.ecoresort {
 
     opens com.spring26.section2.group19.ecoresort to javafx.fxml;
     exports com.spring26.section2.group19.ecoresort;
+    exports com.spring26.section2.group19.ecoresort.ahana;
+    opens com.spring26.section2.group19.ecoresort.ahana to javafx.fxml;
 }
