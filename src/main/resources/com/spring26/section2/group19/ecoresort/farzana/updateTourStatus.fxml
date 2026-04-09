@@ -20,5 +20,6 @@
       </TableView>
       <Button layoutX="464.0" layoutY="239.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
       <Button fx:id="rejectButton" layoutX="464.0" layoutY="284.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
+      <Button layoutX="207.0" layoutY="309.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>
 </AnchorPane>

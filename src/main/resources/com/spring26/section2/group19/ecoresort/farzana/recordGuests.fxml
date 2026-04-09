@@ -19,5 +19,6 @@
       </TableView>
       <Button layoutX="310.0" layoutY="266.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
       <Button layoutX="460.0" layoutY="266.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
+      <Button layoutX="363.0" layoutY="327.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>
 </AnchorPane>

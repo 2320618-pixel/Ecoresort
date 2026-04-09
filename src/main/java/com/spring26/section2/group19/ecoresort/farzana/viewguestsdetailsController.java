@@ -1,16 +1,17 @@
 package com.spring26.section2.group19.ecoresort.farzana;
 
+import com.spring26.section2.group19.ecoresort.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class viewguestsdetailsController
 {
-    @javafx.fxml.FXML
-    private TableColumn GuestIdColumn;
-    @javafx.fxml.FXML
-    private TableColumn GuestNameColumn;
-    @javafx.fxml.FXML
-    private TableColumn GuestPaymentColumn;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -20,11 +21,24 @@ public class viewguestsdetailsController
     public void systemretrievesTabButtonta(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void rejectButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void acceptButton(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void backbutton(ActionEvent actionEvent ) throws IOException {
+
+    }
+
+    @Deprecated
+    public void mytourscheduleButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
     }
 }

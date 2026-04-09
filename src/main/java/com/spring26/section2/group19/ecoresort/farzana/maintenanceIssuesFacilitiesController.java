@@ -1,21 +1,17 @@
 package com.spring26.section2.group19.ecoresort.farzana;
 
+import com.spring26.section2.group19.ecoresort.HelloApplication;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
 
 public class maintenanceIssuesFacilitiesController
 {
     @javafx.fxml.FXML
     private TableColumn IssueTypeColumn;
-    @javafx.fxml.FXML
-    private TableColumn locationColumn;
-    @javafx.fxml.FXML
-    private TableColumn issuesColumn;
-    @javafx.fxml.FXML
-    private TableView MaintenanceTable;
-    @javafx.fxml.FXML
-    private TableColumn saveInputColumn;
     @javafx.fxml.FXML
     private TableColumn savesinputColumn;
     @javafx.fxml.FXML
@@ -35,5 +31,11 @@ public class maintenanceIssuesFacilitiesController
 
     @javafx.fxml.FXML
     public void acceptButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
+
+        ;
     }
 }

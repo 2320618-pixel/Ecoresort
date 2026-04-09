@@ -9,5 +9,6 @@
       <ComboBox fx:id="selectTourComboBox" layoutX="59.0" layoutY="56.0" prefWidth="150.0" promptText="Select Tour" />
       <ComboBox fx:id="statusComboBox" layoutX="215.0" layoutY="116.0" prefWidth="150.0" promptText="Status" />
       <Button layoutX="254.0" layoutY="211.0" mnemonicParsing="false" onAction="#updateStatusButton" text="Update Status" />
+      <Button layoutX="202.0" layoutY="277.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>
 </AnchorPane>
