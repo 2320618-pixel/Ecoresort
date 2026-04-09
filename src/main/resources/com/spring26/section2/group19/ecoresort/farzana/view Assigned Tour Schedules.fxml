@@ -5,31 +5,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.farzana.viewAssignedTourSchedulesController">
    <children>
       <Button layoutX="14.0" layoutY="58.0" mnemonicParsing="false" onAction="#viewAssignedTourSchedulesTabButton" text="view Assigned Tour Schedules" />
       <TableView fx:id="TourTable" layoutX="226.0" prefHeight="200.0" prefWidth="345.0">
         <columns>
-          <TableColumn fx:id="mytourColumn" prefWidth="75.0" text="My Tour" />
-          <TableColumn fx:id="logsInColumn" prefWidth="75.0" text="logs In" />
-            <TableColumn fx:id="scheduleDisplayedColumn" prefWidth="75.0" text="Schedule Displayed" />
+          <TableColumn fx:id="tourColumn" prefWidth="75.0" text=" Tour" />
+          <TableColumn fx:id="tourScheduleColumn" prefWidth="75.0" text="Tour Schedule" />
+            <TableColumn fx:id="scheduleDisplayedColumn" prefWidth="75.0" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <TableView layoutX="8.0" layoutY="216.0" prefHeight="200.0" prefWidth="367.0">
-        <columns>
-          <TableColumn fx:id="myTourColumn" prefWidth="75.0" text="My Tour" />
-          <TableColumn fx:id="logsInColumn" prefWidth="75.0" text="Logs In" />
-            <TableColumn fx:id="ScheduleDisplayedColumn" prefWidth="75.0" text="Schedule Displayed" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-      <Button layoutX="464.0" layoutY="260.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
-      <Button layoutX="466.0" layoutY="316.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
+      <Button layoutX="154.0" layoutY="273.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>
 </AnchorPane>

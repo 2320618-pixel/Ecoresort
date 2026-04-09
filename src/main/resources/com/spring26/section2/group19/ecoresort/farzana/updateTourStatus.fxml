@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.farzana.updateTourStatusController">
    <children>
       <Button layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#updateTourStatusTabButton" text="Update Tour Status" />
@@ -14,16 +13,6 @@
           <TableColumn prefWidth="75.0" text="Started/Cancelled" />
           <TableColumn prefWidth="75.0" text="Status input" />
             <TableColumn prefWidth="75.0" text="Update and shows confirmation" />
-        </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
-      </TableView>
-      <TableView fx:id="updatetourstatustable" layoutY="217.0" prefHeight="200.0" prefWidth="425.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="Started/Cancelled" />
-          <TableColumn fx:id="PersonColumn" prefWidth="75.0" text="Status Input" />
-            <TableColumn fx:id="statusInputColumn" prefWidth="75.0" text="Person Update Confirmation" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
