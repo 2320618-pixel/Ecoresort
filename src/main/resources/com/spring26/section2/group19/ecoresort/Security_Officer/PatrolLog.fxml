@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.Security_Officer.PatrolLogController">
+
+    <children>
+
+        <Label layoutX="260" layoutY="20" text="Night Patrol Log" style="-fx-font-size: 20px;" />
+
+        <!-- Area -->
+        <Label layoutX="50" layoutY="80" text="Patrol Area:" />
+        <ComboBox fx:id="areaCombo" layoutX="200" layoutY="75" prefWidth="200"/>
+
+        <!-- Start Time -->
+        <Label layoutX="50" layoutY="130" text="Start Time (HH:mm):" />
+        <TextField fx:id="startTimeField" layoutX="200" layoutY="125" prefWidth="200"/>
+
+        <!-- End Time -->
+        <Label layoutX="50" layoutY="180" text="End Time (HH:mm):" />
+        <TextField fx:id="endTimeField" layoutX="200" layoutY="175" prefWidth="200"/>
+
+        <!-- Buttons -->
+        <Button layoutX="200" layoutY="230" text="Add Log" onAction="#handleAddLog"/>
+        <Button layoutX="320" layoutY="230" text="Clear" onAction="#handleClear"/>
+
+        <!-- Table -->
+        <TableView fx:id="tableView" layoutX="50" layoutY="300" prefWidth="700" prefHeight="250">
+
+            <columns>
+                <TableColumn fx:id="colArea" text="Area" prefWidth="200"/>
+                <TableColumn fx:id="colStart" text="Start Time" prefWidth="200"/>
+                <TableColumn fx:id="colEnd" text="End Time" prefWidth="200"/>
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>

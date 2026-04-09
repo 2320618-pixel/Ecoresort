@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.Security_Officer.EmergencyAlertController">
+
+    <children>
+
+        <Label layoutX="250" layoutY="20" text="Emergency Alert Panel" style="-fx-font-size: 20px;" />
+
+        <!-- Emergency Type -->
+        <Label layoutX="50" layoutY="100" text="Select Emergency Type:" />
+
+        <RadioButton fx:id="fireBtn" layoutX="250" layoutY="100" text="Fire"/>
+        <RadioButton fx:id="medicalBtn" layoutX="320" layoutY="100" text="Medical"/>
+        <RadioButton fx:id="intrusionBtn" layoutX="410" layoutY="100" text="Intrusion"/>
+
+        <!-- Buttons -->
+        <Button layoutX="250" layoutY="150" text="Trigger Alert" onAction="#handleAlert"/>
+        <Button layoutX="370" layoutY="150" text="Clear" onAction="#handleClear"/>
+
+        <!-- Status -->
+        <Label layoutX="50" layoutY="200" text="Status:" />
+        <Label fx:id="statusLabel" layoutX="200" layoutY="200" text="---"/>
+
+        <!-- Table -->
+        <TableView fx:id="tableView" layoutX="50" layoutY="250" prefWidth="700" prefHeight="280">
+
+            <columns>
+                <TableColumn fx:id="colType" text="Emergency Type" prefWidth="200"/>
+                <TableColumn fx:id="colTime" text="Time" prefWidth="200"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="200"/>
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>
