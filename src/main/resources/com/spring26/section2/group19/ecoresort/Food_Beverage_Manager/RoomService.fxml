@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.Food_Beverage_Manager.RoomServiceController">
+
+    <children>
+
+        <Label layoutX="250" layoutY="20" text="Room Service Requests" style="-fx-font-size: 20px;" />
+
+        <!-- Table -->
+        <TableView fx:id="tableView" layoutX="50" layoutY="80" prefWidth="700" prefHeight="300">
+
+            <columns>
+                <TableColumn fx:id="colRoom" text="Room No" prefWidth="120"/>
+                <TableColumn fx:id="colGuest" text="Guest Name" prefWidth="180"/>
+                <TableColumn fx:id="colItem" text="Item" prefWidth="150"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="150"/>
+            </columns>
+
+        </TableView>
+
+        <!-- Button -->
+        <Button layoutX="300" layoutY="420" text="Mark as Delivered" onAction="#handleDeliver"/>
+
+    </children>
+</AnchorPane>
