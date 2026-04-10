@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.Security_Officer.GuestVerificationController">
+
+    <children>
+
+        <Label layoutX="200" layoutY="20" text="Guest Verification" style="-fx-font-size: 20px;" />
+
+        <!-- Input -->
+        <Label layoutX="50" layoutY="100" text="Enter Guest ID / Room No:" />
+        <TextField fx:id="guestInputField" layoutX="250" layoutY="95" prefWidth="200"/>
+
+        <Button layoutX="470" layoutY="95" text="Verify" onAction="#handleVerify"/>
+
+        <!-- Result -->
+        <Label layoutX="50" layoutY="180" text="Guest Name:" />
+        <Label fx:id="nameLabel" layoutX="200" layoutY="180" text="---"/>
+
+        <Label layoutX="50" layoutY="220" text="Status:" />
+        <Label fx:id="statusLabel" layoutX="200" layoutY="220" text="---"/>
+
+        <Label layoutX="50" layoutY="260" text="Permission:" />
+        <Label fx:id="permissionLabel" layoutX="200" layoutY="260" text="---"/>
+
+    </children>
+</AnchorPane>

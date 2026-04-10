@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="620" prefWidth="820"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.Security_Officer.VisitorEntryLogController">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="260" layoutY="20" text="Visitor Entry Log"
+               style="-fx-font-size: 22px; -fx-text-fill: #2c3e50;" />
+
+        <!-- Inputs -->
+        <Label layoutX="50" layoutY="90" text="Visitor Name:" style="-fx-text-fill:#34495e;"/>
+        <TextField fx:id="nameField" layoutX="200" layoutY="85"/>
+
+        <Label layoutX="50" layoutY="130" text="ID Number:" style="-fx-text-fill:#34495e;"/>
+        <TextField fx:id="idField" layoutX="200" layoutY="125"/>
+
+        <Label layoutX="50" layoutY="170" text="Purpose:" style="-fx-text-fill:#34495e;"/>
+        <TextField fx:id="purposeField" layoutX="200" layoutY="165"/>
+
+        <Label layoutX="50" layoutY="210" text="Date:" style="-fx-text-fill:#34495e;"/>
+        <DatePicker fx:id="datePicker" layoutX="200" layoutY="205"/>
+
+        <!-- Buttons -->
+        <Button layoutX="200" layoutY="250" text="Add Entry"
+                onAction="#handleAdd"/>
+
+        <Button layoutX="320" layoutY="250" text="Save File"
+                onAction="#handleSave"/>
+
+        <!-- Table -->
+        <TableView fx:id="tableView" layoutX="50" layoutY="310" prefWidth="720" prefHeight="280">
+
+            <columns>
+                <TableColumn fx:id="colName" text="Name"/>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colPurpose" text="Purpose"/>
+                <TableColumn fx:id="colDate" text="Date"/>
+            </columns>
+
+        </TableView>
+
+    </children>
+</AnchorPane>
