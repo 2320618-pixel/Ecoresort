@@ -7,8 +7,8 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.farzana.updateTourStatusController">
    <children>
-      <Button layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#updateTourStatusTabButton" text="Update Tour Status" />
-      <TableView fx:id="tourTable" layoutX="177.0" prefHeight="200.0" prefWidth="364.0">
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateTourStatusTabButton" text="Update Tour Status" />
+      <TableView fx:id="tourTable" layoutX="7.0" layoutY="39.0" prefHeight="200.0" prefWidth="593.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Started/Cancelled" />
           <TableColumn prefWidth="75.0" text="Status input" />
@@ -18,7 +18,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="464.0" layoutY="239.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
+      <Button layoutX="435.0" layoutY="258.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
       <Button fx:id="rejectButton" layoutX="464.0" layoutY="284.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
       <Button layoutX="207.0" layoutY="309.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
    </children>
