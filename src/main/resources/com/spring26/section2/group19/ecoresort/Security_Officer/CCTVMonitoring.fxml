@@ -3,36 +3,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0"
+<AnchorPane prefHeight="620" prefWidth="820"
             xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.spring26.section2.group19.ecoresort.Security_Officer.CCTVMonitoringController">
 
     <children>
 
-        <Label layoutX="260" layoutY="20" text="CCTV Monitoring System" style="-fx-font-size: 20px;" />
+        <!-- Title -->
+        <Label layoutX="260" layoutY="20" text="CCTV Monitoring"
+               style="-fx-font-size: 22px; -fx-text-fill: #16a085;" />
 
-        <!-- Camera Selection -->
-        <Label layoutX="50" layoutY="80" text="Select Camera:" />
-        <ComboBox fx:id="cameraCombo" layoutX="200" layoutY="75" prefWidth="200"/>
+        <!-- Inputs -->
+        <Label layoutX="50" layoutY="90" text="Camera ID:"/>
+        <TextField fx:id="cameraField" layoutX="200" layoutY="85"/>
 
-        <Button layoutX="420" layoutY="75" text="View Camera" onAction="#handleViewCamera"/>
+        <Label layoutX="50" layoutY="130" text="Location:"/>
+        <TextField fx:id="locationField" layoutX="200" layoutY="125"/>
 
         <!-- Status -->
-        <Label layoutX="50" layoutY="130" text="Status:" />
-        <Label fx:id="statusLabel" layoutX="200" layoutY="130" text="---"/>
+        <Label layoutX="50" layoutY="170" text="Status:"/>
+        <RadioButton fx:id="activeRB" layoutX="200" layoutY="170" text="Active"/>
+        <RadioButton fx:id="offlineRB" layoutX="280" layoutY="170" text="Offline"/>
 
-        <!-- Live Feed Placeholder -->
-        <Label layoutX="50" layoutY="180" text="Live Feed:" />
-        <TextArea fx:id="feedArea" layoutX="200" layoutY="180" prefWidth="300" prefHeight="120" editable="false"/>
+        <!-- Buttons -->
+        <Button layoutX="200" layoutY="210" text="Add Camera"
+                onAction="#handleAdd"/>
+
+        <Button layoutX="330" layoutY="210" text="Update Status"
+                onAction="#handleUpdate"/>
+
+        <Button layoutX="480" layoutY="210" text="Save File"
+                onAction="#handleSave"/>
 
         <!-- Table -->
-        <TableView fx:id="tableView" layoutX="50" layoutY="330" prefWidth="700" prefHeight="200">
+        <TableView fx:id="tableView" layoutX="50" layoutY="270" prefWidth="720" prefHeight="300">
 
             <columns>
-                <TableColumn fx:id="colId" text="Camera ID" prefWidth="150"/>
-                <TableColumn fx:id="colLocation" text="Location" prefWidth="250"/>
-                <TableColumn fx:id="colStatus" text="Status" prefWidth="200"/>
+                <TableColumn fx:id="colId" text="Camera ID"/>
+                <TableColumn fx:id="colLocation" text="Location"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
             </columns>
 
         </TableView>
