@@ -16,6 +16,8 @@ public class ViewecoactivityInfoController
 
     @javafx.fxml.FXML
     private TableColumn activityColumn;
+    @javafx.fxml.FXML
+    private TableView TourTable;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -31,6 +33,11 @@ public class ViewecoactivityInfoController
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
-
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/TourGuide.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) TourTable.getScene().getWindow();
+        stage.setTitle("Hello!");
+        stage.setScene(scene);
+        stage.show();
     }
 }

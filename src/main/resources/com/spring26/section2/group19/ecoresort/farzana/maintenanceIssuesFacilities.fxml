@@ -10,7 +10,7 @@
       <Button layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#maintenanceIssuesFacilitiesTabButton" text="Maintenance Issues Facilities" />
       <Button layoutX="440.0" layoutY="327.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
       <Button layoutX="506.0" layoutY="327.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
-      <TableView layoutX="229.0" prefHeight="200.0" prefWidth="360.0">
+      <TableView fx:id="maintenanceTable" layoutX="229.0" prefHeight="200.0" prefWidth="360.0">
         <columns>
           <TableColumn fx:id="stuffLocationColumn" prefWidth="75.0" text="Stuff Location" />
           <TableColumn fx:id="IssueTypeColumn" prefWidth="75.0" text="Issue Type" />

@@ -19,6 +19,8 @@ public class performRoutineFcilityecoresort
     private ComboBox selectInspectionAreaComboBox;
     @javafx.fxml.FXML
     private TableColumn ChecklistColum;
+    @javafx.fxml.FXML
+    private TableView selectInspectionTable;
 
     @javafx.fxml.FXML
     public void initialize() {

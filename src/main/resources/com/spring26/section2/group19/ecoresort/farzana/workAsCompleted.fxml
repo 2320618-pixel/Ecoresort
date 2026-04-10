@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.farzana.workAsCompletedController">
    <children>
-      <TextArea layoutX="310.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" promptText="Add Remarks" />
+      <TextArea fx:id="remarksTextArea" layoutX="310.0" layoutY="36.0" prefHeight="200.0" prefWidth="200.0" promptText="Add Remarks" />
       <ComboBox fx:id="selectStuffComboBox" layoutX="31.0" layoutY="23.0" prefWidth="150.0" promptText="Select Stuff" />
       <Button layoutX="106.0" layoutY="243.0" mnemonicParsing="false" onAction="#markAsCompletedButton" text="Mark As Completed" />
       <Button layoutX="398.0" layoutY="256.0" mnemonicParsing="false" onAction="#backButton" text="Back" />

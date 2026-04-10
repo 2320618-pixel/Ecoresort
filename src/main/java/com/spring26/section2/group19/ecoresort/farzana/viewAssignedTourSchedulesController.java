@@ -15,11 +15,11 @@ public class viewAssignedTourSchedulesController
     @javafx.fxml.FXML
     private TableColumn scheduleDisplayedColumn;
     @javafx.fxml.FXML
-    private TableView TourTable;
-    @javafx.fxml.FXML
     private TableColumn tourColumn;
     @javafx.fxml.FXML
     private TableColumn tourScheduleColumn;
+    @javafx.fxml.FXML
+    private TableView viewTourTable;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -29,7 +29,7 @@ public class viewAssignedTourSchedulesController
     public void backButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/TourGuide.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) TourTable.getScene().getWindow();
+        Stage stage = (Stage) viewTourTable.getScene().getWindow();
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

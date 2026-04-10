@@ -10,7 +10,7 @@
    <children>
       <Button layoutX="454.0" layoutY="327.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
       <Button layoutX="522.0" layoutY="327.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
-      <TableView layoutX="187.0" layoutY="117.0" prefHeight="200.0" prefWidth="319.0">
+      <TableView fx:id="selectInspectionTable" layoutX="187.0" layoutY="117.0" prefHeight="200.0" prefWidth="319.0">
         <columns>
           <TableColumn fx:id="ChecklistColum" prefWidth="75.0" text=" Checklist" />
         </columns>

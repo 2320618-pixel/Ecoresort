@@ -45,7 +45,7 @@ public class MaintenanceStuffController
 
     @javafx.fxml.FXML
     public void maintenanceStuffButton(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/maintenanceStuffButton.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/maintenanceIssuesFacilities.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) dashboardLabel.getScene().getWindow();
         stage.setTitle("Hello!");
