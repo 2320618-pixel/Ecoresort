@@ -1,76 +1,99 @@
 package com.spring26.section2.group19.ecoresort.Security_Officer;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import com.spring26.section2.group19.ecoresort.Security_Officer.Model.VisitorEntry;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.*;
+import java.time.LocalDate;
 
 public class VisitorEntryLogController {
 
-    @FXML
-    private ResourceBundle resources;
+    @FXML private TextField nameField;
+    @FXML private TextField idField;
+    @FXML private TextField purposeField;
+    @FXML private DatePicker datePicker;
 
-    @FXML
-    private URL location;
+    @FXML private TableView<VisitorEntry> tableView;
+    @FXML private TableColumn<VisitorEntry, String> colName;
+    @FXML private TableColumn<VisitorEntry, String> colId;
+    @FXML private TableColumn<VisitorEntry, String> colPurpose;
+    @FXML private TableColumn<VisitorEntry, String> colDate;
 
+    // ================= INIT =================
     @FXML
-    private TableColumn<?, ?> colId;
+    public void initialize() {
 
-    @FXML
-    private TableColumn<?, ?> colName;
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colPurpose.setCellValueFactory(new PropertyValueFactory<>("purpose"));
+        colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-    @FXML
-    private TableColumn<?, ?> colPhone;
-
-    @FXML
-    private TableColumn<?, ?> colPurpose;
-
-    @FXML
-    private TableColumn<?, ?> colTime;
-
-    @FXML
-    private DatePicker entryDate;
-
-    @FXML
-    private TextField nameField;
-
-    @FXML
-    private TextField phoneField;
-
-    @FXML
-    private TextArea purposeArea;
-
-    @FXML
-    private TableView<?> tableView;
-
-    @FXML
-    void handleAddEntry(ActionEvent event) {
-
+        // Load file silently
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream("visitor.bin")
+        )) {
+            while (true) {
+                VisitorEntry v = (VisitorEntry) stream.readObject();
+                tableView.getItems().add(v);
+            }
+        } catch (EOFException e) {
+            // normal
+        } catch (Exception e) {
+            System.out.println("No previous file found.");
+        }
     }
 
+    // ================= ADD =================
     @FXML
-    void handleClear(ActionEvent event) {
+    public void handleAdd() {
 
+        String name = nameField.getText();
+        String id = idField.getText();
+        String purpose = purposeField.getText();
+        LocalDate date = datePicker.getValue();
+
+        if (name.isEmpty() || id.isEmpty() || purpose.isEmpty() || date == null) {
+            showWarning("All fields must be filled!");
+            return;
+        }
+
+        VisitorEntry v = new VisitorEntry(name, id, purpose, date.toString());
+        tableView.getItems().add(v);
+
+        showInfo("Visitor added successfully!");
     }
 
+    // ================= SAVE =================
     @FXML
-    void initialize() {
-        assert colId != null : "fx:id=\"colId\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert colName != null : "fx:id=\"colName\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert colPhone != null : "fx:id=\"colPhone\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert colPurpose != null : "fx:id=\"colPurpose\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert colTime != null : "fx:id=\"colTime\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert entryDate != null : "fx:id=\"entryDate\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert nameField != null : "fx:id=\"nameField\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert phoneField != null : "fx:id=\"phoneField\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert purposeArea != null : "fx:id=\"purposeArea\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
-        assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'VisitorEntryLog.fxml'.";
+    public void handleSave() {
 
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream("visitor.bin")
+        )) {
+
+            for (VisitorEntry v : tableView.getItems()) {
+                stream.writeObject(v);
+            }
+
+            showInfo("Saved successfully!");
+
+        } catch (IOException e) {
+            showError("Save failed!");
+        }
     }
 
+    // ================= ALERTS =================
+    private void showInfo(String msg) {
+        new Alert(Alert.AlertType.INFORMATION, msg).showAndWait();
+    }
+
+    private void showWarning(String msg) {
+        new Alert(Alert.AlertType.WARNING, msg).showAndWait();
+    }
+
+    private void showError(String msg) {
+        new Alert(Alert.AlertType.ERROR, msg).showAndWait();
+    }
 }

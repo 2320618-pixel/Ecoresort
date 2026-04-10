@@ -1,59 +1,146 @@
 package com.spring26.section2.group19.ecoresort.Security_Officer;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import com.spring26.section2.group19.ecoresort.Security_Officer.Model.CCTV;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.*;
 
 public class CCTVMonitoringController {
 
-    @FXML
-    private ResourceBundle resources;
+    @FXML private TextField cameraField;
+    @FXML private TextField locationField;
 
-    @FXML
-    private URL location;
+    @FXML private RadioButton activeRB;
+    @FXML private RadioButton offlineRB;
 
-    @FXML
-    private ComboBox<?> cameraCombo;
+    @FXML private TableView<CCTV> tableView;
+    @FXML private TableColumn<CCTV, String> colId;
+    @FXML private TableColumn<CCTV, String> colLocation;
+    @FXML private TableColumn<CCTV, String> colStatus;
 
-    @FXML
-    private TableColumn<?, ?> colId;
+    private ToggleGroup group = new ToggleGroup();
 
+    // ================= INIT =================
     @FXML
-    private TableColumn<?, ?> colLocation;
+    public void initialize() {
 
-    @FXML
-    private TableColumn<?, ?> colStatus;
+        activeRB.setToggleGroup(group);
+        offlineRB.setToggleGroup(group);
 
-    @FXML
-    private TextArea feedArea;
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colLocation.setCellValueFactory(new PropertyValueFactory<>("location"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-    @FXML
-    private Label statusLabel;
+        // 🔥 COLOR STATUS COLUMN
+        colStatus.setCellFactory(column -> new TableCell<>() {
+            @Override
+            protected void updateItem(String status, boolean empty) {
+                super.updateItem(status, empty);
 
-    @FXML
-    private TableView<?> tableView;
+                if (empty || status == null) {
+                    setText(null);
+                    setStyle("");
+                } else {
+                    setText(status);
 
-    @FXML
-    void handleViewCamera(ActionEvent event) {
+                    if (status.equals("Active")) {
+                        setStyle("-fx-text-fill: green; -fx-font-weight: bold;");
+                    } else {
+                        setStyle("-fx-text-fill: red; -fx-font-weight: bold;");
+                    }
+                }
+            }
+        });
 
+        // Load file
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream("cctv.bin")
+        )) {
+            while (true) {
+                CCTV c = (CCTV) stream.readObject();
+                tableView.getItems().add(c);
+            }
+        } catch (EOFException e) {
+        } catch (Exception e) {
+            System.out.println("No previous data");
+        }
     }
 
+    // ================= ADD =================
     @FXML
-    void initialize() {
-        assert cameraCombo != null : "fx:id=\"cameraCombo\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
-        assert colId != null : "fx:id=\"colId\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
-        assert colLocation != null : "fx:id=\"colLocation\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
-        assert colStatus != null : "fx:id=\"colStatus\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
-        assert feedArea != null : "fx:id=\"feedArea\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
-        assert statusLabel != null : "fx:id=\"statusLabel\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
-        assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'CCTVMonitoring.fxml'.";
+    public void handleAdd() {
 
+        String id = cameraField.getText();
+        String location = locationField.getText();
+
+        if (id.isEmpty() || location.isEmpty() || group.getSelectedToggle() == null) {
+            showWarning("Fill all fields!");
+            return;
+        }
+
+        String status = ((RadioButton) group.getSelectedToggle()).getText();
+
+        CCTV c = new CCTV(id, location, status);
+        tableView.getItems().add(c);
+
+        showInfo("Camera added!");
     }
 
+    // ================= UPDATE =================
+    @FXML
+    public void handleUpdate() {
+
+        CCTV selected = tableView.getSelectionModel().getSelectedItem();
+
+        if (selected == null) {
+            showWarning("Select a camera!");
+            return;
+        }
+
+        if (group.getSelectedToggle() == null) {
+            showWarning("Select status!");
+            return;
+        }
+
+        String newStatus = ((RadioButton) group.getSelectedToggle()).getText();
+        selected.setStatus(newStatus);
+
+        tableView.refresh();
+
+        showInfo("Status updated!");
+    }
+
+    // ================= SAVE =================
+    @FXML
+    public void handleSave() {
+
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream("cctv.bin")
+        )) {
+
+            for (CCTV c : tableView.getItems()) {
+                stream.writeObject(c);
+            }
+
+            showInfo("Saved successfully!");
+
+        } catch (IOException e) {
+            showError("Save failed!");
+        }
+    }
+
+    // ================= ALERTS =================
+    private void showInfo(String msg) {
+        new Alert(Alert.AlertType.INFORMATION, msg).showAndWait();
+    }
+
+    private void showWarning(String msg) {
+        new Alert(Alert.AlertType.WARNING, msg).showAndWait();
+    }
+
+    private void showError(String msg) {
+        new Alert(Alert.AlertType.ERROR, msg).showAndWait();
+    }
 }

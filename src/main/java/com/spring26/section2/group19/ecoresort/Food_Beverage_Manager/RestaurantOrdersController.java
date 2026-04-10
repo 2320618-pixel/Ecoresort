@@ -1,53 +1,125 @@
 package com.spring26.section2.group19.ecoresort.Food_Beverage_Manager;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import com.spring26.section2.group19.ecoresort.Food_Beverage_Manager.Model.RestaurantOrder;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.io.*;
 
 public class RestaurantOrdersController {
 
-    @FXML
-    private ResourceBundle resources;
+    @FXML private TextField idField;
+    @FXML private TextField itemField;
+    @FXML private TextField qtyField;
 
-    @FXML
-    private URL location;
+    @FXML private ComboBox<String> statusCombo;
 
-    @FXML
-    private TableColumn<?, ?> colId;
+    @FXML private TableView<RestaurantOrder> tableView;
+    @FXML private TableColumn<RestaurantOrder, String> colId;
+    @FXML private TableColumn<RestaurantOrder, String> colItem;
+    @FXML private TableColumn<RestaurantOrder, Integer> colQty;
+    @FXML private TableColumn<RestaurantOrder, String> colStatus;
 
-    @FXML
-    private TableColumn<?, ?> colItem;
+    @FXML private Label msgLabel;
 
+    // ================= INITIALIZE =================
     @FXML
-    private TableColumn<?, ?> colQty;
+    public void initialize() {
 
-    @FXML
-    private TableColumn<?, ?> colStatus;
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colItem.setCellValueFactory(new PropertyValueFactory<>("item"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-    @FXML
-    private ComboBox<?> statusCombo;
+        statusCombo.setItems(FXCollections.observableArrayList(
+                "Pending", "Preparing", "Served"
+        ));
 
-    @FXML
-    private TableView<?> tableView;
-
-    @FXML
-    void handleUpdate(ActionEvent event) {
-
+        // Load file
+        try (ObjectInputStream stream = new ObjectInputStream(
+                new FileInputStream("order.bin")
+        )) {
+            while (true) {
+                RestaurantOrder o = (RestaurantOrder) stream.readObject();
+                tableView.getItems().add(o);
+            }
+        } catch (EOFException e) {
+            msgLabel.setText("Data loaded!");
+        } catch (Exception e) {
+            msgLabel.setText("No previous data!");
+        }
     }
 
+    // ================= ADD =================
     @FXML
-    void initialize() {
-        assert colId != null : "fx:id=\"colId\" was not injected: check your FXML file 'RestaurantOrders.fxml'.";
-        assert colItem != null : "fx:id=\"colItem\" was not injected: check your FXML file 'RestaurantOrders.fxml'.";
-        assert colQty != null : "fx:id=\"colQty\" was not injected: check your FXML file 'RestaurantOrders.fxml'.";
-        assert colStatus != null : "fx:id=\"colStatus\" was not injected: check your FXML file 'RestaurantOrders.fxml'.";
-        assert statusCombo != null : "fx:id=\"statusCombo\" was not injected: check your FXML file 'RestaurantOrders.fxml'.";
-        assert tableView != null : "fx:id=\"tableView\" was not injected: check your FXML file 'RestaurantOrders.fxml'.";
+    public void handleAdd() {
 
+        try {
+            String id = idField.getText();
+            String item = itemField.getText();
+            int qty = Integer.parseInt(qtyField.getText());
+
+            if (id.isEmpty() || item.isEmpty()) {
+                msgLabel.setText("Fill all fields!");
+                return;
+            }
+
+            if (qty <= 0) {
+                msgLabel.setText("Quantity must be positive!");
+                return;
+            }
+
+            RestaurantOrder order = new RestaurantOrder(id, item, qty, "Pending");
+            tableView.getItems().add(order);
+
+            msgLabel.setText("Order added!");
+
+        } catch (NumberFormatException e) {
+            msgLabel.setText("Invalid quantity!");
+        }
     }
 
+    // ================= UPDATE =================
+    @FXML
+    public void handleUpdate() {
+
+        RestaurantOrder selected = tableView.getSelectionModel().getSelectedItem();
+        String newStatus = statusCombo.getValue();
+
+        if (selected == null) {
+            msgLabel.setText("Select an order!");
+            return;
+        }
+
+        if (newStatus == null) {
+            msgLabel.setText("Select status!");
+            return;
+        }
+
+        selected.setStatus(newStatus);
+        tableView.refresh();
+
+        msgLabel.setText("Status updated!");
+    }
+
+    // ================= SAVE =================
+    @FXML
+    public void handleSaveFile() {
+
+        try (ObjectOutputStream stream = new ObjectOutputStream(
+                new FileOutputStream("order.bin")
+        )) {
+
+            for (RestaurantOrder o : tableView.getItems()) {
+                stream.writeObject(o);
+            }
+
+            msgLabel.setText("Saved successfully!");
+
+        } catch (IOException e) {
+            msgLabel.setText("Save failed!");
+        }
+    }
 }
