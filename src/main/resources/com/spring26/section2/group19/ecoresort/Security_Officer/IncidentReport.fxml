@@ -3,43 +3,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0"
+<AnchorPane prefHeight="620" prefWidth="820"
             xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.spring26.section2.group19.ecoresort.Security_Officer.IncidentReportController">
 
     <children>
 
-        <Label layoutX="250" layoutY="20" text="Security Incident Report" style="-fx-font-size: 20px;" />
+        <!-- Title -->
+        <Label layoutX="260" layoutY="20" text="Incident Reporting"
 
-        <!-- Incident Type -->
-        <Label layoutX="50" layoutY="80" text="Incident Type:" />
-        <ComboBox fx:id="typeCombo" layoutX="200" layoutY="75" prefWidth="200"/>
+        <!-- Inputs -->
+        <Label layoutX="50" layoutY="90" text="Incident Type:" style="-fx-text-fill:#34495e;"/>
+        <ComboBox fx:id="typeCombo" layoutX="200" layoutY="85"/>
 
-        <!-- Location -->
-        <Label layoutX="50" layoutY="130" text="Location:" />
-        <TextField fx:id="locationField" layoutX="200" layoutY="125" prefWidth="200"/>
+        <Label layoutX="50" layoutY="130" text="Description:" style="-fx-text-fill:#34495e;"/>
+        <TextArea fx:id="descArea" layoutX="200" layoutY="125" prefWidth="250" prefHeight="80"/>
 
-        <!-- Description -->
-        <Label layoutX="50" layoutY="180" text="Description:" />
-        <TextArea fx:id="descriptionArea" layoutX="200" layoutY="175" prefWidth="200" prefHeight="80"/>
+        <Label layoutX="50" layoutY="220" text="Severity:" style="-fx-text-fill:#34495e;"/>
+        <RadioButton fx:id="lowRB" layoutX="200" layoutY="220" text="Low"/>
+        <RadioButton fx:id="mediumRB" layoutX="260" layoutY="220" text="Medium"/>
+        <RadioButton fx:id="highRB" layoutX="340" layoutY="220" text="High"/>
 
-        <!-- Date -->
-        <Label layoutX="50" layoutY="280" text="Incident Date:" />
-        <DatePicker fx:id="datePicker" layoutX="200" layoutY="275"/>
+        <Label layoutX="50" layoutY="260" text="Date:" style="-fx-text-fill:#34495e;"/>
+        <DatePicker fx:id="datePicker" layoutX="200" layoutY="255"/>
 
         <!-- Buttons -->
-        <Button layoutX="200" layoutY="330" text="Submit Report" onAction="#handleSubmit"/>
-        <Button layoutX="340" layoutY="330" text="Clear" onAction="#handleClear"/>
+        <Button layoutX="200" layoutY="300" text="Report Incident"
+                onAction="#handleAdd"/>
+
+        <Button layoutX="360" layoutY="300" text="Save File"
+                onAction="#handleSave"/>
 
         <!-- Table -->
-        <TableView fx:id="tableView" layoutX="50" layoutY="380" prefWidth="700" prefHeight="180">
+        <TableView fx:id="tableView" layoutX="50" layoutY="350" prefWidth="720" prefHeight="240">
 
             <columns>
-                <TableColumn fx:id="colType" text="Type" prefWidth="120"/>
-                <TableColumn fx:id="colLocation" text="Location" prefWidth="150"/>
-                <TableColumn fx:id="colDescription" text="Description" prefWidth="200"/>
-                <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+                <TableColumn fx:id="colType" text="Type"/>
+                <TableColumn fx:id="colDesc" text="Description"/>
+                <TableColumn fx:id="colSeverity" text="Severity"/>
+                <TableColumn fx:id="colDate" text="Date"/>
             </columns>
 
         </TableView>

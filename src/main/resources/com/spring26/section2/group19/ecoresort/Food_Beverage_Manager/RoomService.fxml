@@ -3,29 +3,48 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0"
+<AnchorPane prefHeight="620" prefWidth="820"
             xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.spring26.section2.group19.ecoresort.Food_Beverage_Manager.RoomServiceController">
 
     <children>
 
-        <Label layoutX="250" layoutY="20" text="Room Service Requests" style="-fx-font-size: 20px;" />
+        <!-- Title -->
+        <Label layoutX="260" layoutY="20" text="Room Service Requests"
+               style="-fx-font-size: 22px; -fx-text-fill: #2c3e50;" />
+
+        <!-- Inputs -->
+        <Label layoutX="50" layoutY="90" text="Room No:" style="-fx-text-fill: #34495e;"/>
+        <TextField fx:id="roomField" layoutX="200" layoutY="85"/>
+
+        <Label layoutX="50" layoutY="130" text="Guest Name:" style="-fx-text-fill: #34495e;"/>
+        <TextField fx:id="guestField" layoutX="200" layoutY="125"/>
+
+        <Label layoutX="50" layoutY="170" text="Item:" style="-fx-text-fill: #34495e;"/>
+        <TextField fx:id="itemField" layoutX="200" layoutY="165"/>
+
+        <!-- Buttons -->
+        <Button layoutX="200" layoutY="210" text="Add Request"
+                onAction="#handleAdd"/>
+
+        <Button layoutX="320" layoutY="210" text="Mark Delivered"
+                onAction="#handleDeliver"/>
+
+        <Button layoutX="470" layoutY="210" text="Save File"
+                onAction="#handleSave"/>
 
         <!-- Table -->
-        <TableView fx:id="tableView" layoutX="50" layoutY="80" prefWidth="700" prefHeight="300">
+        <TableView fx:id="tableView" layoutX="50" layoutY="270" prefWidth="720" prefHeight="300">
 
             <columns>
-                <TableColumn fx:id="colRoom" text="Room No" prefWidth="120"/>
-                <TableColumn fx:id="colGuest" text="Guest Name" prefWidth="180"/>
-                <TableColumn fx:id="colItem" text="Item" prefWidth="150"/>
-                <TableColumn fx:id="colStatus" text="Status" prefWidth="150"/>
+                <TableColumn fx:id="colRoom" text="Room"/>
+                <TableColumn fx:id="colGuest" text="Guest"/>
+                <TableColumn fx:id="colItem" text="Item"/>
+                <TableColumn fx:id="colStatus" text="Status"/>
             </columns>
 
         </TableView>
-
-        <!-- Button -->
-        <Button layoutX="300" layoutY="420" text="Mark as Delivered" onAction="#handleDeliver"/>
 
     </children>
 </AnchorPane>
