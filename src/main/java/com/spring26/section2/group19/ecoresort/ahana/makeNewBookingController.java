@@ -5,44 +5,41 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class checkGuestController
+public class makeNewBookingController
 {
     @javafx.fxml.FXML
-    private TableView guestTable;
+    private TextField totalPriceField;
     @javafx.fxml.FXML
-    private TableColumn guestDetailsCol;
+    private TableColumn dateCol;
     @javafx.fxml.FXML
-    private TableColumn roomNumberCol;
+    private TextField nameField;
     @javafx.fxml.FXML
-    private TextField bookingIdeField;
+    private TextField emailField;
+    @javafx.fxml.FXML
+    private TableColumn roomCol;
+    @javafx.fxml.FXML
+    private TextField phoneField;
+    @javafx.fxml.FXML
+    private TableColumn priceCol;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void searchButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void markRoomButton(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void confirmedButton(ActionEvent actionEvent) {
+    public void confirm(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/ahana/receptionist.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/ahana/booking.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) guestTable.getScene().getWindow();
+        Stage stage = (Stage) totalPriceField.getScene().getWindow();
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

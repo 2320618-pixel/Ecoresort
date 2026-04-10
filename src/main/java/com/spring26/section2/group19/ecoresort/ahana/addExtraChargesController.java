@@ -5,47 +5,42 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import javax.swing.table.TableColumn;
 import java.io.IOException;
 
-public class checkGuestOutController
+public class addExtraChargesController
 {
     @javafx.fxml.FXML
-    private TableView billTable;
+    private ComboBox selectGuest;
     @javafx.fxml.FXML
-    private TextField guestroomField;
+    private TextField totalField;
     @javafx.fxml.FXML
-    private TableColumn totalCol;
+    private TableColumn billCol;
     @javafx.fxml.FXML
-    private TableColumn cdhargesCol;
+    private TableColumn itemsCol;
     @javafx.fxml.FXML
-    private TableColumn itemCol;
-    @javafx.fxml.FXML
-    private ComboBox paymentmethodCB;
-    @javafx.fxml.FXML
-    private TextField amountField;
+    private TextField enterRoomField;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void pay(ActionEvent actionEvent) {
+    public void loadGuest(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void checkout(ActionEvent actionEvent) {
+    public void addCharge(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
-    public void backbutton(ActionEvent actionEvent) throws IOException {
+    public void backButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/ahana/receptionist.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) billTable.getScene().getWindow();
+        Stage stage = (Stage) selectGuest.getScene().getWindow();
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
