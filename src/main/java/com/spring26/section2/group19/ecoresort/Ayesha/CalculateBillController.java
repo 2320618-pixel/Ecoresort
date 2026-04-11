@@ -25,15 +25,39 @@ public class CalculateBillController
     @javafx.fxml.FXML
     private TextField bookingID;
 
+    Bill bill;
     @javafx.fxml.FXML
     public void initialize() {
+        itemType.getItems().addAll("Room", "Restaurant", "Spa", "Activity");
+
+
     }
 
     @javafx.fxml.FXML
     public void generateBillBtn(ActionEvent actionEvent) {
+        String checkOutDate = date.getValue().toString();
+        String bookingIDText = bookingID.getText();
+        String itemTypeText = itemType.getValue().toString();
+        int days = Integer.parseInt(daysTotal.getText());
+        double pricePerDay = Double.parseDouble(priceTotal.getText());
+        double discountValue = Double.parseDouble(discount.getText());
+        double totalAmount = (pricePerDay * days) - discountValue;
+        String billDetailsText = billDetails.getText();
+
+        bill = new Bill(checkOutDate, bookingIDText, itemTypeText, days, pricePerDay, discountValue, totalAmount, billDetailsText);
+        showTotalAmount.setText(String.valueOf(totalAmount));
     }
 
     @javafx.fxml.FXML
     public void calculateTotalBillBtn(ActionEvent actionEvent) {
+        String checkOutDate = date.getValue().toString();
+        String bookingIDText = bookingID.getText();
+        String itemTypeText = itemType.getValue().toString();
+        int days = Integer.parseInt(daysTotal.getText());
+        double pricePerDay = Double.parseDouble(priceTotal.getText());
+        double discountValue = Double.parseDouble(discount.getText());
+        double totalAmount = (pricePerDay * days) - discountValue;
+        String billDetailsText = billDetails.getText();
+
     }
 }
