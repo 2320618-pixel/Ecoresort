@@ -1,4 +1,4 @@
-package com.spring26.section2.group19.ecoresort;
+package com.spring26.section2.group19.ecoresort.farzana;
 
 public class Maintenance {
     private String StuffLocation;

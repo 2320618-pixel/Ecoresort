@@ -1,18 +1,16 @@
 package com.spring26.section2.group19.ecoresort.farzana;
 
 import com.spring26.section2.group19.ecoresort.HelloApplication;
-import com.spring26.section2.group19.ecoresort.Maintenance;
-import com.spring26.section2.group19.ecoresort.Routine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import javax.imageio.IIOException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +25,8 @@ public class performRoutineFcilityecoresort
     @javafx.fxml.FXML
     private TableView<Routine> selectInspectionTable;
     List<Routine> routineList = new ArrayList<>();
+    @javafx.fxml.FXML
+    private PieChart pieChart;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -36,6 +36,9 @@ public class performRoutineFcilityecoresort
 
 
         selectInspectionAreaComboBox.getItems().addAll("room","washroom");
+        pieChart.getData().add(new PieChart.Data("RoutineServices",30));
+        pieChart.getData().add(new PieChart.Data("RegularUpkeep",70));
+
     }
 
     @javafx.fxml.FXML

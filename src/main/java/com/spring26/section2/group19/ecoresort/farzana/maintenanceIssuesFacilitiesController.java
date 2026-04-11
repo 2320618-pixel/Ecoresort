@@ -1,10 +1,10 @@
 package com.spring26.section2.group19.ecoresort.farzana;
 
 import com.spring26.section2.group19.ecoresort.HelloApplication;
-import com.spring26.section2.group19.ecoresort.Maintenance;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +25,8 @@ public class maintenanceIssuesFacilitiesController
     @javafx.fxml.FXML
     private TableView<Maintenance> maintenanceTable;
     List<Maintenance> maintenanceList = new ArrayList<>();
+    @javafx.fxml.FXML
+    private PieChart pieChart;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -33,6 +35,8 @@ public class maintenanceIssuesFacilitiesController
         stuffLocationColumn.setCellValueFactory(new PropertyValueFactory<>("StuffLocation"));
 
         maintenanceList.add(new Maintenance("Dhaka", "no Ac", "yes"));
+        pieChart.getData().add(new PieChart.Data("Repairs",40));
+        pieChart.getData().add(new PieChart.Data("Amenities",60));
     }
 
     @javafx.fxml.FXML

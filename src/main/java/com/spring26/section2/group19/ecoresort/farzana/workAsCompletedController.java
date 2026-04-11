@@ -4,10 +4,8 @@ import com.spring26.section2.group19.ecoresort.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,12 +14,19 @@ public class workAsCompletedController
 {
 
     @javafx.fxml.FXML
-    private ComboBox selectStuffComboBox;
+    private ComboBox<String> selectStuffComboBox;
     @javafx.fxml.FXML
     private TextArea remarksTextArea;
+    @javafx.fxml.FXML
+    private Label displayLabel;
+    @javafx.fxml.FXML
+    private PieChart pieChart;
 
     @javafx.fxml.FXML
     public void initialize() {
+        selectStuffComboBox.getItems().addAll("Ahana","Momo");
+        pieChart.getData().add(new PieChart.Data("Travelassistance",60));
+        pieChart.getData().add(new PieChart.Data("GuideServices",40));
     }
 
     @Deprecated
@@ -44,5 +49,11 @@ public class workAsCompletedController
 
     @javafx.fxml.FXML
     public void markAsCompletedButton(ActionEvent actionEvent) {
+        String Remarks = remarksTextArea.getText();
+
+        Work w = new Work(Remarks);
+
+        displayLabel.setText("Completed");
+
     }
 }

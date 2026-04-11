@@ -1,11 +1,10 @@
 package com.spring26.section2.group19.ecoresort.farzana;
 
 import com.spring26.section2.group19.ecoresort.HelloApplication;
-import com.spring26.section2.group19.ecoresort.RecordGuests;
-import com.spring26.section2.group19.ecoresort.Routine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -20,16 +19,20 @@ public class recordGuestsController
     @javafx.fxml.FXML
     private TableColumn<RecordGuests,String> guideMarkAttendanceColumn;
     @javafx.fxml.FXML
-    private TableColumn<RecordGuests,String> loadGuestsColumn;
-    @javafx.fxml.FXML
     private TableView<RecordGuests> recordTable;
     List<RecordGuests> recordGuestsList = new ArrayList<>();
+    @javafx.fxml.FXML
+    private TableColumn<RecordGuests ,String> loadGuestsListColumn;
+    @javafx.fxml.FXML
+    private PieChart pieChart;
 
     @javafx.fxml.FXML
     public void initialize() {
         guideMarkAttendanceColumn.setCellValueFactory(new PropertyValueFactory<>("guideMarkAttendanceColumn"));
-        loadGuestsColumn.setCellValueFactory(new PropertyValueFactory<>("loadGuestsColumn"));
+        loadGuestsListColumn.setCellValueFactory(new PropertyValueFactory<>("loadGuestsColumn"));
         recordGuestsList.add(new RecordGuests("Ahana","Attendance"));
+        pieChart.getData().add(new PieChart.Data("GuestEntry",70));
+        pieChart.getData().add(new PieChart.Data("GuestEntry",70));
 
     }
 
