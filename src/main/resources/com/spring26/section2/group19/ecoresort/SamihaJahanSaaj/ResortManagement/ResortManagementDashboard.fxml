@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.ResortManagement.ResortManagementDashboardController">
+
+    <children>
+        <Text layoutX="200.0" layoutY="35.0" text="Resort Management">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
+
+        <Button layoutX="70.0" layoutY="80.0" onAction="#manageRoomButton" prefHeight="35.0" prefWidth="180.0" text="Manage Room pricing" />
+        <Button layoutX="330.0" layoutY="80.0" onAction="#viewoverallButton" prefHeight="35.0" prefWidth="180.0" text="View overall resort performance" />
+
+        <Button layoutX="70.0" layoutY="130.0" onAction="#approveButton" prefHeight="35.0" prefWidth="180.0" text="Approve staff schedules" />
+        <Button layoutX="330.0" layoutY="130.0" onAction="#monitorButton" prefHeight="35.0" prefWidth="180.0" text="Monitor room occupancy" />
+
+        <Button layoutX="70.0" layoutY="180.0" onAction="#handleButton" prefHeight="35.0" prefWidth="180.0" text="handle guest complains" />
+        <Button layoutX="330.0" layoutY="180.0" onAction="#resotServiceButton" prefHeight="35.0" prefWidth="180.0" text="Add new resort services" />
+
+        <Button layoutX="70.0" layoutY="230.0" onAction="#financialButton" prefHeight="35.0" prefWidth="180.0" text="view financial summary" />
+        <Button layoutX="330.0" layoutY="230.0" onAction="#recordButton" prefHeight="35.0" prefWidth="180.0" text="Record guest payments" />
+
+        <Button layoutX="480.0" layoutY="350.0" onAction="#backButton" prefHeight="30.0" prefWidth="80.0" text="Back" />
+    </children>
+
+</AnchorPane>

@@ -64,5 +64,25 @@ public class logInController
             stage.show();
 
         }
+
+        if (username.equals("AccountOfficer") && passwords.equals("1234")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com/spring26/section2/group19/ecoresort/SamihaJahanSaaj/AccountOfficer/AccountOfficerDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) userName.getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+        if (username.equals("ResortManagement") && passwords.equals("1234")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com/spring26/section2/group19/ecoresort/SamihaJahanSaaj/ResortManagement/ResortManagementDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) userName.getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        }
     }
 }
