@@ -17,6 +17,7 @@ public class bookingController
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
 
@@ -36,7 +37,7 @@ public class bookingController
 
     @javafx.fxml.FXML
     public void logOut(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/ahana/logOut.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/logInPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) bookingDashboardLabel.getScene().getWindow();
         stage.setTitle("Hello!");
