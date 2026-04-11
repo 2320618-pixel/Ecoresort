@@ -14,15 +14,13 @@ public class viewguestsdetailsController
 {
 
     @javafx.fxml.FXML
-    private TableView tourbookingsTable;
-    @javafx.fxml.FXML
-    private TableColumn tourbookingsColumn;
+    private TableView systemTable;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void systemretrievesTabButtonta(ActionEvent actionEvent) {
     }
 
@@ -39,7 +37,7 @@ public class viewguestsdetailsController
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void mytourscheduleButton(ActionEvent actionEvent) {
     }
 

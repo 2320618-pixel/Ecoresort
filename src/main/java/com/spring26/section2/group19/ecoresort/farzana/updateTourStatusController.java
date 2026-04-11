@@ -15,8 +15,6 @@ public class updateTourStatusController
 {
     @javafx.fxml.FXML
     private TableView tourTable;
-    @javafx.fxml.FXML
-    private Button rejectButton;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -26,11 +24,11 @@ public class updateTourStatusController
     public void updateTourStatusTabButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void rejectButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void acceptButton(ActionEvent actionEvent) {
     }
 

@@ -36,11 +36,11 @@ public class recordGuestsController
 
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void rejectButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void acceptButton(ActionEvent actionEvent) {
         recordTable.getItems().addAll(recordGuestsList);
     }

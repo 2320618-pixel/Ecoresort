@@ -10,6 +10,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +37,12 @@ public class maintenanceIssuesFacilitiesController
         stuffLocationColumn.setCellValueFactory(new PropertyValueFactory<>("StuffLocation"));
 
         maintenanceList.add(new Maintenance("Dhaka", "no Ac", "yes"));
-        pieChart.getData().add(new PieChart.Data("Repairs",40));
-        pieChart.getData().add(new PieChart.Data("Amenities",60));
+        pieChart.getData().add(new PieChart.Data("Repairs",30));
+        pieChart.getData().add(new PieChart.Data("Amenities",40));
+        pieChart.getData().add(new PieChart.Data("Facilities",30));
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void rejectButton(ActionEvent actionEvent) {
     }
 
@@ -48,9 +51,6 @@ public class maintenanceIssuesFacilitiesController
         maintenanceTable.getItems().addAll(maintenanceList);
     }
 
-    @javafx.fxml.FXML
-    public void acceptButton(ActionEvent actionEvent) {
-    }
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException {
@@ -61,5 +61,14 @@ public class maintenanceIssuesFacilitiesController
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void saveButton(ActionEvent actionEvent) {
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter("Example.txt"))) {
+            writer.write("Takee");
+        } catch (IOException e) {
+            System.out.println("File Writting Failed");
+        }
     }
 }

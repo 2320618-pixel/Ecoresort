@@ -9,8 +9,6 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.farzana.maintenanceIssuesFacilitiesController">
    <children>
       <Button layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#maintenanceIssuesFacilitiesTabButton" text="Maintenance Issues Facilities" />
-      <Button layoutX="440.0" layoutY="327.0" mnemonicParsing="false" onAction="#acceptButton" text="Accept" />
-      <Button layoutX="506.0" layoutY="327.0" mnemonicParsing="false" onAction="#rejectButton" text="Reject" />
       <TableView fx:id="maintenanceTable" layoutX="229.0" prefHeight="200.0" prefWidth="360.0">
         <columns>
           <TableColumn fx:id="stuffLocationColumn" prefWidth="75.0" text="Stuff Location" />
@@ -22,6 +20,7 @@
          </columnResizePolicy>
       </TableView>
       <Button layoutX="446.0" layoutY="255.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
-      <PieChart fx:id="pieChart" layoutX="39.0" layoutY="214.0" prefHeight="225.0" prefWidth="380.0" />
+      <PieChart fx:id="pieChart" layoutX="237.0" layoutY="255.0" prefHeight="225.0" prefWidth="380.0" />
+      <Button layoutX="466.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
    </children>
 </AnchorPane>

@@ -36,8 +36,11 @@ public class performRoutineFcilityecoresort
 
 
         selectInspectionAreaComboBox.getItems().addAll("room","washroom");
-        pieChart.getData().add(new PieChart.Data("RoutineServices",30));
-        pieChart.getData().add(new PieChart.Data("RegularUpkeep",70));
+        pieChart.getData().add(new PieChart.Data("RoutineServices",10));
+        pieChart.getData().add(new PieChart.Data("FacilityCare",30));
+        pieChart.getData().add(new PieChart.Data("RoutineMaintenance",20));
+        pieChart.getData().add(new PieChart.Data("DailyMaintenance",40));
+
 
     }
 
