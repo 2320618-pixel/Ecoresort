@@ -7,27 +7,37 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class checkGuestController
 {
     @javafx.fxml.FXML
-    private TableView guestTable;
+    private TableView<checkG>guestTable;
     @javafx.fxml.FXML
-    private TableColumn guestDetailsCol;
+    private TableColumn<checkG,Integer> guestDetailsCol;
     @javafx.fxml.FXML
-    private TableColumn roomNumberCol;
+    private TableColumn<checkG,Integer> roomNumberCol;
     @javafx.fxml.FXML
     private TextField bookingIdeField;
+    List<checkG> checkGList= new ArrayList<>();
+
 
     @javafx.fxml.FXML
     public void initialize() {
+        guestDetailsCol.setCellValueFactory(new PropertyValueFactory<>("guestDetailCol"));
+        roomNumberCol.setCellValueFactory(new PropertyValueFactory<>("roomNumberCol"));
+        checkGList.add (new checkG("hi", 1));
     }
 
     @javafx.fxml.FXML
     public void searchButton(ActionEvent actionEvent) {
+
+        guestTable.getItems().addAll(checkGList);
     }
 
     @javafx.fxml.FXML
