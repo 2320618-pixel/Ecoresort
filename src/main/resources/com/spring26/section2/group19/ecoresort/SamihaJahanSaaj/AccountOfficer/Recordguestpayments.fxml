@@ -1,15 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.RecordguestpaymentsController"
-            prefHeight="400.0" prefWidth="600.0">
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.RecordguestpaymentsController">
 
+    <!-- 🔷 TOP HEADER -->
+    <top>
+        <HBox spacing="20" style="-fx-background-color: #1E3A5F;">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
 
-</AnchorPane>
+                  <Label style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" text="Guest Payment Entry" />
+
+            <Pane HBox.hgrow="ALWAYS" />
+
+            <Label style="-fx-text-fill: white;" text="User: Account Officer" />
+            <Label style="-fx-text-fill: white;" text="Date: 2026-04-11" />
+        </HBox>
+    </top>
+
+    <!-- 🔷 LEFT SIDEBAR -->
+    <left>
+        <VBox prefWidth="200" spacing="10" style="-fx-background-color: #2C3E50;">
+            <padding>
+                <Insets bottom="15" left="15" right="15" top="15" />
+            </padding>
+
+            <Button maxWidth="Infinity" text="Dashboard" />
+            <Button maxWidth="Infinity" style="-fx-background-color: #34495E; -fx-text-fill: white;" text="Payments" />
+            <Button maxWidth="Infinity" text="Reports" />
+            <Button maxWidth="Infinity" text="Settings" />
+        </VBox>
+    </left>
+
+    <!-- 🔷 MAIN CONTENT -->
+    <center>
+        <VBox spacing="20">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <!-- 🟦 Payment Form -->
+            <TitledPane expanded="true" text="Enter Payment Details">
+                <GridPane hgap="15" vgap="15">
+                    <padding>
+                        <Insets bottom="15" left="15" right="15" top="15" />
+                    </padding>
+
+                    <Label text="Guest Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="guestNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Payment Method:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <ComboBox fx:id="paymentMethodBox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Amount:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="amountField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <DatePicker fx:id="paymentDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <Label text="Reference:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <TextArea fx:id="referenceField" prefHeight="60" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </TitledPane>
+
+            <!-- 🟨 Validation Section -->
+            <HBox spacing="10">
+                <Label prefHeight="24.0" prefWidth="38.0" text="Status:" />
+            <TextField prefHeight="3.0" prefWidth="160.0" />
+            </HBox>
+
+            <!-- 🟩 Action Buttons -->
+            <HBox spacing="15">
+                <Button fx:id="saveBtn" style="-fx-background-color: #27AE60; -fx-text-fill: white;" text="Save Payment" />
+                <Button fx:id="clearBtn" text="Clear" />
+                <Button fx:id="cancelBtn" style="-fx-background-color: #E74C3C; -fx-text-fill: white;" text="Cancel" />
+            </HBox>
+
+            <!-- 🟪 Payment Table -->
+            <TitledPane expanded="true" text="Payment Records">
+                <TableView fx:id="paymentTable" prefHeight="200">
+                    <columns>
+                        <TableColumn prefWidth="150" text="Guest Name" />
+                        <TableColumn prefWidth="120" text="Method" />
+                        <TableColumn prefWidth="100" text="Amount" />
+                        <TableColumn prefWidth="120" text="Date" />
+                        <TableColumn prefWidth="200" text="Reference" />
+                    </columns>
+                </TableView>
+            </TitledPane>
+
+        </VBox>
+    </center>
+
+</BorderPane>

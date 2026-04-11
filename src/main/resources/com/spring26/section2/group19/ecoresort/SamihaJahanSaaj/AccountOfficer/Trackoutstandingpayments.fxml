@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.TrackoutstandingpaymentsController"
+            prefHeight="650.0" prefWidth="1000.0">
+
+    <children>
+
+        <!-- 🔷 MAIN LAYOUT -->
+        <BorderPane AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+
+            <!-- 🔷 HEADER -->
+            <top>
+                <HBox spacing="20" style="-fx-background-color: #1E3A5F;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Label text="Track Outstanding Payments"
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <Pane HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Account Officer" style="-fx-text-fill: white;"/>
+                </HBox>
+            </top>
+
+            <!-- 🔷 SIDEBAR -->
+            <left>
+                <VBox spacing="10" prefWidth="200"
+                      style="-fx-background-color: #2C3E50;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Button text="Dashboard" maxWidth="Infinity"/>
+                    <Button text="Outstanding Payments" maxWidth="Infinity"
+                            style="-fx-background-color: #34495E; -fx-text-fill: white;"/>
+                    <Button text="Invoices" maxWidth="Infinity"/>
+                    <Button text="Reports" maxWidth="Infinity"/>
+                </VBox>
+            </left>
+
+            <!-- 🔷 MAIN CONTENT -->
+            <center>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" left="20" right="20" bottom="20"/>
+                    </padding>
+
+                    <!-- 🟦 EVENT 1 + 2 (UIE + OP) -->
+                    <TitledPane text="Pending Payments List" expanded="true">
+                        <TableView fx:id="pendingPaymentsTable" prefHeight="250">
+
+                            <columns>
+                                <TableColumn text="Booking ID" prefWidth="120"/>
+                                <TableColumn text="Guest Name" prefWidth="180"/>
+                                <TableColumn text="Due Amount" prefWidth="120"/>
+                                <TableColumn text="Due Date" prefWidth="140"/>
+                                <TableColumn text="Status" prefWidth="120"/>
+                            </columns>
+
+                        </TableView>
+                    </TitledPane>
+
+                    <!-- 🟨 EVENT 3 (VR - Review Details) -->
+                    <TitledPane text="Review Payment Details" expanded="true">
+                        <GridPane hgap="15" vgap="10">
+                            <padding>
+                                <Insets top="15" left="15" right="15" bottom="15"/>
+                            </padding>
+
+                            <Label text="Booking ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="bookingIdField" editable="false"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Guest Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="guestNameField" editable="false"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Due Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="dueAmountField" editable="false"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Due Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="dueDateField" editable="false"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                            <Label text="Days Overdue:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                            <TextField fx:id="overdueDaysField" editable="false"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                        </GridPane>
+                    </TitledPane>
+
+                    <!-- 🟩 EVENT 4 (UID - Actions) -->
+                    <HBox spacing="15">
+                        <Button text="Flag as Overdue" fx:id="flagBtn"
+                                style="-fx-background-color: #E67E22; -fx-text-fill: white;"/>
+
+                        <Button text="Mark Reviewed" fx:id="reviewBtn"
+                                style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
+
+                        <Button text="Refresh List" fx:id="refreshBtn"/>
+                    </HBox>
+
+                </VBox>
+            </center>
+
+        </BorderPane>
+
+    </children>
+
+</AnchorPane>

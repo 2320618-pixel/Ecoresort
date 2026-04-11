@@ -1,26 +1,36 @@
 package com.spring26.section2.group19.ecoresort.farzana;
 
 import com.spring26.section2.group19.ecoresort.HelloApplication;
+import com.spring26.section2.group19.ecoresort.RecordGuests;
+import com.spring26.section2.group19.ecoresort.Routine;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class recordGuestsController
 {
     @javafx.fxml.FXML
-    private TableColumn guideMarkAttendanceColumn;
+    private TableColumn<RecordGuests,String> guideMarkAttendanceColumn;
     @javafx.fxml.FXML
-    private TableColumn loadGuestsListColumn;
+    private TableColumn<RecordGuests,String> loadGuestsColumn;
     @javafx.fxml.FXML
-    private TableView recordTable;
+    private TableView<RecordGuests> recordTable;
+    List<RecordGuests> recordGuestsList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
+        guideMarkAttendanceColumn.setCellValueFactory(new PropertyValueFactory<>("guideMarkAttendanceColumn"));
+        loadGuestsColumn.setCellValueFactory(new PropertyValueFactory<>("loadGuestsColumn"));
+        recordGuestsList.add(new RecordGuests("Ahana","Attendance"));
+
     }
 
     @javafx.fxml.FXML
@@ -29,6 +39,7 @@ public class recordGuestsController
 
     @javafx.fxml.FXML
     public void acceptButton(ActionEvent actionEvent) {
+        recordTable.getItems().addAll(recordGuestsList);
     }
 
     @javafx.fxml.FXML
