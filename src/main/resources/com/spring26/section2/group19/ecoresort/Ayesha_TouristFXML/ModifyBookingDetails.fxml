@@ -7,11 +7,11 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="483.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.Ayesha.ModifyBookingDetailsController">
    <children>
       <Label layoutX="194.0" layoutY="29.0" prefHeight="46.0" prefWidth="213.0" text="Modify Booking Details">
          <font>
@@ -19,20 +19,23 @@
          </font>
       </Label>
       <Label layoutX="48.0" layoutY="100.0" prefHeight="18.0" prefWidth="73.0" text="Booking ID:" />
-      <TextField layoutX="141.0" layoutY="97.0" />
-      <ComboBox layoutX="141.0" layoutY="154.0" prefWidth="150.0" />
+      <TextField fx:id="bookingID" layoutX="141.0" layoutY="97.0" />
+      <ComboBox fx:id="roomType" layoutX="141.0" layoutY="154.0" prefWidth="150.0" />
       <Label layoutX="48.0" layoutY="157.0" prefHeight="18.0" prefWidth="73.0" text="Room Type:" />
-      <DatePicker layoutX="380.0" layoutY="97.0" />
-      <DatePicker layoutX="380.0" layoutY="154.0" />
+      <DatePicker fx:id="checkIN" layoutX="380.0" layoutY="97.0" />
+      <DatePicker fx:id="checkOut" layoutX="380.0" layoutY="154.0" />
       <Label layoutX="300.0" layoutY="100.0" prefHeight="18.0" prefWidth="73.0" text="Check-In:" />
       <Label layoutX="300.0" layoutY="157.0" prefHeight="18.0" prefWidth="73.0" text="Check -out:" />
       <Label layoutX="48.0" layoutY="208.0" prefHeight="18.0" prefWidth="106.0" text="Number Of Guest:" />
-      <TextField layoutX="154.0" layoutY="204.0" />
-      <TextArea layoutX="41.0" layoutY="254.0" prefHeight="55.0" prefWidth="522.0" promptText="Special request" />
-      <RadioButton layoutX="168.0" layoutY="337.0" mnemonicParsing="false" text="active" />
-      <RadioButton layoutX="255.0" layoutY="337.0" mnemonicParsing="false" text="cancelled" />
+      <TextField fx:id="numOfGuest" layoutX="154.0" layoutY="204.0" />
+      <TextArea fx:id="spacialRequest" layoutX="41.0" layoutY="254.0" prefHeight="55.0" prefWidth="522.0" promptText="Special request" />
+      <RadioButton fx:id="activeRBtn" layoutX="168.0" layoutY="337.0" mnemonicParsing="false" text="active">
+         <toggleGroup>
+            <ToggleGroup fx:id="radio" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="cancelledRBtn" layoutX="255.0" layoutY="337.0" mnemonicParsing="false" text="cancelled" toggleGroup="$radio" />
       <Label layoutX="41.0" layoutY="336.0" prefHeight="18.0" prefWidth="106.0" text="Booking Status:" />
-      <Button layoutX="41.0" layoutY="403.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Update " />
-      <Button layoutX="432.0" layoutY="409.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Save" />
+      <Button layoutX="41.0" layoutY="403.0" mnemonicParsing="false" onAction="#updateBtn" prefHeight="26.0" prefWidth="122.0" text="Update " />
+      <Button layoutX="432.0" layoutY="409.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="26.0" prefWidth="122.0" text="Save" />
    </children>
 </AnchorPane>
