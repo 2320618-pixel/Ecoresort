@@ -4,6 +4,7 @@ import com.spring26.section2.group19.ecoresort.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
@@ -27,9 +28,15 @@ public class mealsOrActivitiesController
     private TableColumn currentTotalCol;
     @javafx.fxml.FXML
     private TextField updatedTotalField;
+    @javafx.fxml.FXML
+    private PieChart pieChart;
 
     @javafx.fxml.FXML
     public void initialize() {
+        pieChart.getData().add(new PieChart.Data("Meals Distribution",30));
+        pieChart.getData().add(new PieChart.Data("Activity Breakdown",30));
+        pieChart.getData().add(new PieChart.Data("Food Choices",30));
+        pieChart.getData().add(new PieChart.Data("Activity Types",10));
     }
 
     @javafx.fxml.FXML

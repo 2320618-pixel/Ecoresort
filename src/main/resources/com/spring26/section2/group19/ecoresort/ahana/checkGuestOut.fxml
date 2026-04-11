@@ -13,7 +13,7 @@
       <TextField fx:id="guestroomField" layoutX="30.0" layoutY="41.0" promptText="guest room id " />
       <TableView fx:id="billTable" layoutX="30.0" layoutY="114.0" prefHeight="200.0" prefWidth="248.0">
         <columns>
-          <TableColumn fx:id="cdhargesCol" prefWidth="75.0" text="charges" />
+          <TableColumn fx:id="chargesCol" prefWidth="75.0" text="charges" />
           <TableColumn fx:id="itemCol" prefWidth="75.0" text="item" />
             <TableColumn fx:id="totalCol" prefWidth="75.0" text="total" />
         </columns>

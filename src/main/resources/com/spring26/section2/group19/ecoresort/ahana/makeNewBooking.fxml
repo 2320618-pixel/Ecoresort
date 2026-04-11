@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -21,5 +22,6 @@
       <TextField fx:id="totalPriceField" layoutX="21.0" layoutY="338.0" promptText="total price" />
       <Button layoutX="399.0" layoutY="351.0" mnemonicParsing="false" onAction="#confirm" text="confirm" />
       <Button layoutX="514.0" layoutY="37.0" mnemonicParsing="false" onAction="#backButton" text="back" />
+      <PieChart fx:id="pieChart" layoutX="277.0" layoutY="112.0" prefHeight="165.0" prefWidth="244.0" />
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ import com.spring26.section2.group19.ecoresort.HelloApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -26,9 +27,16 @@ public class makeNewBookingController
     private TextField phoneField;
     @javafx.fxml.FXML
     private TableColumn priceCol;
+    @javafx.fxml.FXML
+    private PieChart pieChart;
 
     @javafx.fxml.FXML
     public void initialize() {
+        pieChart.getData().add(new PieChart.Data("New Bookings",30));
+        pieChart.getData().add(new PieChart.Data("Booking Summary",30));
+        pieChart.getData().add(new PieChart.Data("Recent Bookings",30));
+        pieChart.getData().add(new PieChart.Data("Booking Overview",10));
+
     }
 
     @javafx.fxml.FXML

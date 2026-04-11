@@ -11,7 +11,7 @@
       <TextField fx:id="checkInField" layoutX="14.0" layoutY="23.0" promptText="check in" />
       <TextField fx:id="checkOutField" layoutX="14.0" layoutY="58.0" promptText="check out" />
       <TextField fx:id="totalGuestField" layoutX="14.0" layoutY="98.0" promptText="total guest" />
-      <TableView layoutX="14.0" layoutY="160.0" prefHeight="178.0" prefWidth="359.0">
+      <TableView fx:id="detailsCol" layoutX="14.0" layoutY="160.0" prefHeight="178.0" prefWidth="359.0">
         <columns>
           <TableColumn fx:id="roomNoCol" prefWidth="75.0" text="room no" />
           <TableColumn fx:id="typeCol" prefWidth="75.0" text="type" />

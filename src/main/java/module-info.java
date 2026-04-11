@@ -4,8 +4,8 @@ module com.spring26.section2.group19.ecoresort {
     requires javafx.graphics;
     requires java.desktop;
 
-    requires javafx.graphics;
-    requires java.desktop;
+
+
 
 
 

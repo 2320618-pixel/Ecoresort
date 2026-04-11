@@ -1,4 +1,4 @@
-package com.spring26.section2.group19.ecoresort;
+package com.spring26.section2.group19.ecoresort.ahana;
 
 public class booking {
     private int booking;

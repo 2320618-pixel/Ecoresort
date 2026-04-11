@@ -21,6 +21,7 @@ public class emptyOrFullController
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
     @javafx.fxml.FXML
