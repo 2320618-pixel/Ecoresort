@@ -19,9 +19,19 @@ public class ProvideFeedbackAfterStayController
 
     @javafx.fxml.FXML
     public void initialize() {
+        rating.getItems().addAll("1", "2", "3", "4", "5");
+
     }
 
     @javafx.fxml.FXML
     public void submitBtn(ActionEvent actionEvent) {
+        	String bookingIDText = bookingID.getText();
+            String feedbackText = feedback.getText();
+            String ratingValue = (String) rating.getValue();
+            String dateValue = date.getValue().toString();
+
+            Feedback feedbackObj = new Feedback(bookingIDText, Integer.parseInt(ratingValue), feedbackText, dateValue);
+
+
     }
 }
