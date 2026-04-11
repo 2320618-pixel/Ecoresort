@@ -1,14 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.ExportfinancialdataController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="600.0" prefWidth="900.0">
+
+    <children>
+
+        <!-- 🔷 MAIN CONTAINER -->
+        <BorderPane AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+
+            <!-- 🔷 HEADER -->
+            <top>
+                <HBox spacing="20" style="-fx-background-color: #1E3A5F;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Label text="Export Financial Data"
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <Pane HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Account Officer" style="-fx-text-fill: white;"/>
+                </HBox>
+            </top>
+
+            <!-- 🔷 SIDEBAR -->
+            <left>
+                <VBox spacing="10" prefWidth="200"
+                      style="-fx-background-color: #2C3E50;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Button text="Dashboard" maxWidth="Infinity"/>
+                    <Button text="Export Data" maxWidth="Infinity"
+                            style="-fx-background-color: #34495E; -fx-text-fill: white;"/>
+                    <Button text="Reports" maxWidth="Infinity"/>
+                    <Button text="Settings" maxWidth="Infinity"/>
+                </VBox>
+            </left>
+
+            <!-- 🔷 MAIN CONTENT -->
+            <center>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" left="20" right="20" bottom="20"/>
+                    </padding>
+
+                    <!-- 🟦 EVENT 1 (UIE - Select Data) -->
+                    <TitledPane text="Select Data for Export" expanded="true">
+                        <GridPane hgap="15" vgap="10">
+                            <padding>
+                                <Insets top="15" left="15" right="15" bottom="15"/>
+                            </padding>
+
+                            <Label text="From Date:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <DatePicker fx:id="fromDatePicker"
+                                        GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="To Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <DatePicker fx:id="toDatePicker"
+                                        GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Data Type:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <ComboBox fx:id="dataTypeBox"
+                                      GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        </GridPane>
+                    </TitledPane>
+
+                    <!-- 🟨 EVENT 2 (UID - Choose Format) -->
+                    <TitledPane text="Choose File Format" expanded="true">
+                        <HBox spacing="20">
+                            <RadioButton text="PDF" fx:id="pdfOption"/>
+                            <RadioButton text="Excel" fx:id="excelOption"/>
+                        </HBox>
+                    </TitledPane>
+
+                    <!-- 🟧 EVENT 3 (DP - Processing Status) -->
+                    <HBox spacing="10">
+                        <Label text="Status:"/>
+                        <Label fx:id="statusLabel"
+                               text="Waiting for export..."
+                               style="-fx-text-fill: orange;"/>
+                    </HBox>
+
+                    <!-- 🟩 EVENT 4 (OP - Download) -->
+                    <HBox spacing="15">
+                        <Button text="Generate File" fx:id="generateBtn"
+                                style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
+
+                        <Button text="Download" fx:id="downloadBtn"
+                                style="-fx-background-color: #2980B9; -fx-text-fill: white;"/>
+
+                        <Button text="Reset" fx:id="resetBtn"/>
+                    </HBox>
+
+                </VBox>
+            </center>
+
+        </BorderPane>
+
+    </children>
 
 </AnchorPane>
