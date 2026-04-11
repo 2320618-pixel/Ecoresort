@@ -44,5 +44,25 @@ public class logInController
             stage.show();
 
         }
+
+        if (username.equals("MaintenanceStuff") && passwords.equals("5678")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/MaintenanceStuff.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) userName.getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+        if (username.equals("TourGuide") && passwords.equals("5678")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/TourGuide.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) userName.getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        }
     }
 }

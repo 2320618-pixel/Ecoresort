@@ -35,7 +35,7 @@ public class TourGuideController
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) throws IOException{
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/workAsCompletedButton.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/logInPage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) DashboardLabel.getScene().getWindow();
         stage.setTitle("Hello!");

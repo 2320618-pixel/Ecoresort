@@ -36,7 +36,7 @@ public class updateTourStatusController
     public void backButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/MaintenanceStuff.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) rejectButton.getScene().getWindow();
+        Stage stage = (Stage) tourTable.getScene().getWindow();
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

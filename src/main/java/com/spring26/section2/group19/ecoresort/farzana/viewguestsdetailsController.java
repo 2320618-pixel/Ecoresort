@@ -45,7 +45,7 @@ public class viewguestsdetailsController
     public void backButton(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/TourGuide.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = (Stage) tourbookingsTable.getScene().getWindow();
+        Stage stage = (Stage) systemTable.getScene().getWindow();
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
