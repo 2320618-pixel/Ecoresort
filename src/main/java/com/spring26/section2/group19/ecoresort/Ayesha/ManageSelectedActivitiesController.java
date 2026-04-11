@@ -53,7 +53,6 @@ public class ManageSelectedActivitiesController
 
     @javafx.fxml.FXML
     public void saveBtn(ActionEvent actionEvent) {
-            String selectedActivity = changeActivity.getValue();
+        String selectedActivity = changeActivity.getValue();
         }
-    }
 }
