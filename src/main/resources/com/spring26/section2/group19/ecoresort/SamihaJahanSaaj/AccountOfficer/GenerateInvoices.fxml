@@ -109,7 +109,8 @@
                         <Button text="Print" fx:id="printBtn"/>
 
                         <Button text="Download PDF" fx:id="downloadBtn"
-                                style="-fx-background-color: #2980B9; -fx-text-fill: white;"/>
+                                style="-fx-background-color: #2980B9; -fx-text-fill: white;"
+                                onAction="#onActionIdDownloadBtn"/>
                     </HBox>
 
                 </VBox>

@@ -1,5 +1,6 @@
 package com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
@@ -32,4 +33,8 @@ public class GenerateInvoicesController
 
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    public void onActionIdDownloadBtn(ActionEvent actionEvent) {
+    }
+}
