@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.ResortManagement.RecordguestpaymentsController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="500.0" prefWidth="700.0">
 
+    <children>
+
+        <Label text="Record Guest Payment"
+               layoutX="220" layoutY="20"/>
+
+        <TextField fx:id="guestNameField"
+                   layoutX="200" layoutY="80"
+                   promptText="Guest Name"/>
+
+        <TextField fx:id="amountField"
+                   layoutX="200" layoutY="130"
+                   promptText="Amount"/>
+
+        <DatePicker fx:id="datePicker"
+                    layoutX="200" layoutY="180"/>
+
+        <Button text="Save"
+                layoutX="200" layoutY="230"
+                onAction="#handleSavePayment"/>
+
+        <Button text="Clear"
+                layoutX="280" layoutY="230"
+                onAction="#handleClearForm"/>
+
+        <Label fx:id="errorLabel"
+               layoutX="200" layoutY="270"/>
+
+        <Label fx:id="successLabel"
+               layoutX="200" layoutY="300"/>
+
+    </children>
 </AnchorPane>
