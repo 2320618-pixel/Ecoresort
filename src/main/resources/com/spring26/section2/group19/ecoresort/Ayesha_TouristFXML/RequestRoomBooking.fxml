@@ -9,23 +9,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.Ayesha.RequestRoomBookingController">
    <children>
       <Label layoutX="183.0" layoutY="41.0" prefHeight="34.0" prefWidth="232.0" text="Request Room Booking">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField layoutX="66.0" layoutY="91.0" promptText="Booking Serial No" />
-      <ComboBox layoutX="309.0" layoutY="91.0" prefWidth="150.0" promptText="Room Type" />
-      <TextField layoutX="66.0" layoutY="125.0" promptText="Phone" />
-      <DatePicker layoutX="202.0" layoutY="165.0" />
-      <DatePicker layoutX="202.0" layoutY="200.0" />
+      <TextField fx:id="bookingID" layoutX="66.0" layoutY="91.0" promptText="Booking Serial No" />
+      <ComboBox fx:id="roomType" layoutX="309.0" layoutY="91.0" prefWidth="150.0" promptText="Room Type" />
+      <TextField fx:id="phone" layoutX="66.0" layoutY="125.0" promptText="Phone" />
+      <DatePicker fx:id="checkIn" layoutX="202.0" layoutY="165.0" />
+      <DatePicker fx:id="checkOut" layoutX="202.0" layoutY="200.0" />
       <Label layoutX="73.0" layoutY="169.0" prefHeight="18.0" prefWidth="97.0" text="Check-IN" />
       <Label layoutX="73.0" layoutY="203.0" prefHeight="18.0" prefWidth="97.0" text="Check-OUT" />
-      <TextField layoutX="309.0" layoutY="125.0" promptText="Number Of Guest" />
-      <TextArea layoutX="59.0" layoutY="249.0" prefHeight="61.0" prefWidth="478.0" promptText="Special Requests" />
-      <Button layoutX="225.0" layoutY="374.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="162.0" text="Submit Request" />
+      <TextField fx:id="guestNum" layoutX="309.0" layoutY="125.0" promptText="Number Of Guest" />
+      <TextArea fx:id="specialRequest" layoutX="59.0" layoutY="249.0" prefHeight="61.0" prefWidth="478.0" promptText="Special Requests" />
+      <Button layoutX="225.0" layoutY="374.0" mnemonicParsing="false" onAction="#submitRequestBtn" prefHeight="26.0" prefWidth="162.0" text="Submit Request" />
    </children>
 </AnchorPane>
