@@ -2,26 +2,26 @@ package com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer;
 
 import javafx.scene.control.*;
 
-public class RecordguestpaymentsController
+public class ExportfinancialdataController
 {
     @javafx.fxml.FXML
-    private ComboBox paymentMethodBox;
+    private Button resetBtn;
     @javafx.fxml.FXML
-    private TextArea referenceField;
+    private DatePicker fromDatePicker;
     @javafx.fxml.FXML
-    private Button clearBtn;
+    private RadioButton pdfOption;
     @javafx.fxml.FXML
-    private Button cancelBtn;
+    private DatePicker toDatePicker;
     @javafx.fxml.FXML
-    private TableView paymentTable;
+    private RadioButton excelOption;
     @javafx.fxml.FXML
-    private TextField guestNameField;
+    private ComboBox dataTypeBox;
     @javafx.fxml.FXML
-    private DatePicker paymentDate;
+    private Button downloadBtn;
     @javafx.fxml.FXML
-    private TextField amountField;
+    private Button generateBtn;
     @javafx.fxml.FXML
-    private Button saveBtn;
+    private Label statusLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
