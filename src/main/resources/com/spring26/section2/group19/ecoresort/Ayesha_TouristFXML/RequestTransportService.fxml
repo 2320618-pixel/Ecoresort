@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="755.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="755.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.Ayesha.RequestTransportServiceController">
    <children>
       <Label layoutX="151.0" layoutY="36.0" prefHeight="43.0" prefWidth="298.0" text="Request Transport Service">
          <font>
@@ -22,14 +22,14 @@
       </Label>
       <Label layoutX="60.0" layoutY="119.0" prefHeight="18.0" prefWidth="97.0" text="Booking ID:" />
       <Label layoutX="60.0" layoutY="152.0" prefHeight="18.0" prefWidth="97.0" text="Transport Type:" />
-      <RadioButton layoutX="173.0" layoutY="152.0" mnemonicParsing="false" text="Car">
+      <RadioButton fx:id="car" layoutX="173.0" layoutY="152.0" mnemonicParsing="false" text="Car">
          <toggleGroup>
             <ToggleGroup fx:id="radio" />
          </toggleGroup></RadioButton>
-      <RadioButton layoutX="254.0" layoutY="153.0" mnemonicParsing="false" text="Jeep" toggleGroup="$radio" />
-      <RadioButton layoutX="329.0" layoutY="153.0" mnemonicParsing="false" text="Boat" toggleGroup="$radio" />
+      <RadioButton fx:id="jeep" layoutX="254.0" layoutY="153.0" mnemonicParsing="false" text="Jeep" toggleGroup="$radio" />
+      <RadioButton fx:id="boat" layoutX="329.0" layoutY="153.0" mnemonicParsing="false" text="Boat" toggleGroup="$radio" />
       <Label layoutX="60.0" layoutY="188.0" prefHeight="18.0" prefWidth="97.0" text="Travel date:" />
-      <DatePicker fx:id="date" layoutX="166.0" layoutY="184.0" />
+      <DatePicker fx:id="date" layoutX="166.0" layoutY="184.0" onAction="#travelDate" />
       <Label layoutX="60.0" layoutY="232.0" prefHeight="18.0" prefWidth="97.0" text="Time Slot:" />
       <ComboBox fx:id="timeSlotText" layoutX="166.0" layoutY="228.0" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="60.0" layoutY="271.0" prefHeight="18.0" prefWidth="97.0" text="Pickup Location:" />
@@ -39,15 +39,15 @@
       <TextField fx:id="dropOFFlocation" layoutX="166.0" layoutY="316.0" prefHeight="26.0" prefWidth="175.0" />
       <TextArea fx:id="noteText" layoutX="51.0" layoutY="358.0" prefHeight="50.0" prefWidth="510.0" promptText="Addition Note" />
       <Button layoutX="262.0" layoutY="421.0" mnemonicParsing="false" onAction="#save" prefHeight="26.0" prefWidth="88.0" text="Save" />
-      <Button layoutX="399.0" layoutY="685.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" text="Send Request" />
-      <TableView layoutX="25.0" layoutY="469.0" onSort="#tableView" prefHeight="200.0" prefWidth="599.0">
+      <Button layoutX="399.0" layoutY="685.0" mnemonicParsing="false" onAction="#sendReqBtn" prefHeight="26.0" prefWidth="175.0" text="Send Request" />
+      <TableView fx:id="tableView" layoutX="25.0" layoutY="469.0" onSort="#tableView" prefHeight="200.0" prefWidth="599.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Booking ID" />
-          <TableColumn prefWidth="95.20000457763672" text="TransportType" />
-            <TableColumn prefWidth="73.5999755859375" text="Travel Date" />
-            <TableColumn prefWidth="73.5999755859375" text="Time Slot" />
-            <TableColumn prefWidth="114.4000244140625" text="Pickup Location" />
-            <TableColumn prefWidth="162.40005493164062" text="Status" />
+          <TableColumn fx:id="bookingIDClm" prefWidth="75.0" text="Booking ID" />
+          <TableColumn fx:id="transportTypeClm" prefWidth="95.20000457763672" text="TransportType" />
+            <TableColumn fx:id="traveldateClm" prefWidth="73.5999755859375" text="Travel Date" />
+            <TableColumn fx:id="timeSlotClm" prefWidth="73.5999755859375" text="Time Slot" />
+            <TableColumn fx:id="pickupLocationClm" prefWidth="114.4000244140625" text="Pickup Location" />
+            <TableColumn fx:id="statusClm" prefWidth="162.40005493164062" text="Status" />
         </columns>
       </TableView>
       <Label layoutX="350.0" layoutY="320.0" prefHeight="18.0" prefWidth="97.0" text="Request Status:" />
