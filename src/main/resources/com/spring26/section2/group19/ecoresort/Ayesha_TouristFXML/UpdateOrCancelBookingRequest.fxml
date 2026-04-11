@@ -28,8 +28,8 @@
       <DatePicker fx:id="updateDate" layoutX="167.0" layoutY="78.0" />
       <Label layoutX="61.0" layoutY="120.0" prefHeight="18.0" prefWidth="98.0" text="Update Guest No:" />
       <TextField fx:id="updateGuestNo" layoutX="167.0" layoutY="116.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button fx:id="updateReqBtn" layoutX="61.0" layoutY="479.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Update Request" />
-      <Button fx:id="cancelreqBtn" layoutX="380.0" layoutY="479.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Cancel Request" />
+      <Button layoutX="61.0" layoutY="479.0" mnemonicParsing="false" onAction="#updateReqBtn" prefHeight="26.0" prefWidth="166.0" text="Update Request" />
+      <Button layoutX="380.0" layoutY="479.0" mnemonicParsing="false" onAction="#cancelreqBtn" prefHeight="26.0" prefWidth="166.0" text="Cancel Request" />
       <Label layoutX="61.0" layoutY="160.0" prefHeight="18.0" prefWidth="118.0" text="Update requremants:" />
       <TextArea fx:id="updateRequirements" layoutX="179.0" layoutY="158.0" prefHeight="38.0" prefWidth="366.0" />
       <Button layoutX="231.0" layoutY="207.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="26.0" prefWidth="166.0" text="Save" />

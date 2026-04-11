@@ -19,16 +19,46 @@ public class UpdateOrCancelBookingRequestController
     private TableView tableView;
     @javafx.fxml.FXML
     private TableColumn noOfGuestClm;
-    @javafx.fxml.FXML
-    private Button updateReqBtn;
-    @javafx.fxml.FXML
-    private Button cancelreqBtn;
 
+    BookingReqUpdate bookingReqUpdate;
     @javafx.fxml.FXML
     public void initialize() {
+        dateClm .setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("date"));
+        noOfGuestClm.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("numberOfGuests"));
+        requirementsClm.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("requirements"));
+
     }
 
     @javafx.fxml.FXML
     public void saveBtn(ActionEvent actionEvent) {
+        String date = updateDate.getValue().toString();
+        int numberOfGuests = Integer.parseInt(updateGuestNo.getText());
+        String requirements = updateRequirements.getText();
+        String status = "Updated";
+
+        BookingReqUpdate bookingReqUpdate = new BookingReqUpdate(date, numberOfGuests, requirements, status);
+        System.out.println(bookingReqUpdate);
+    }
+
+    @javafx.fxml.FXML
+    public void cancelreqBtn(ActionEvent actionEvent) {
+        String date = updateDate.getValue().toString();
+            int numberOfGuests = Integer.parseInt(updateGuestNo.getText());
+            String requirements = updateRequirements.getText();
+            String status = "Cancelled";
+
+            BookingReqUpdate bookingReqUpdate = new BookingReqUpdate(date, numberOfGuests, requirements, status);
+            System.out.println(bookingReqUpdate);
+    }
+
+    @javafx.fxml.FXML
+    public void updateReqBtn(ActionEvent actionEvent) {
+        String date = updateDate.getValue().toString();
+            int numberOfGuests = Integer.parseInt(updateGuestNo.getText());
+            String requirements = updateRequirements.getText();
+            String status = "Updated";
+
+            BookingReqUpdate bookingReqUpdate = new BookingReqUpdate(date, numberOfGuests, requirements, status);
+            System.out.println(bookingReqUpdate);
     }
 }
