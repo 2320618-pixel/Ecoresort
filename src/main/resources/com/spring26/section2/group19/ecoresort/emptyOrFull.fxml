@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.emptyOrFullController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#roomStatus" text="room status" />
+      <TableView layoutX="14.0" layoutY="58.0" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="roomNumberCol" prefWidth="75.0" text="room numkber " />
+          <TableColumn fx:id="roomConditionCol" prefWidth="75.0" text="room condition" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="condition" layoutX="247.0" layoutY="58.0" prefWidth="150.0" promptText="condition" />
+      <Button layoutX="36.0" layoutY="282.0" mnemonicParsing="false" onAction="#notify" text="notify" />
+   </children>
+</AnchorPane>
