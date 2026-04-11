@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="609.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.Ayesha.CalculateBillController">
+   <children>
+      <Label layoutX="181.0" layoutY="14.0" prefHeight="40.0" prefWidth="238.0" text="Calculate Bill">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Label layoutX="57.0" layoutY="102.0" prefHeight="18.0" prefWidth="71.0" text="Booking ID:" />
+      <TextField fx:id="bookingID" layoutX="128.0" layoutY="99.0" />
+      <Label layoutX="57.0" layoutY="150.0" prefHeight="18.0" prefWidth="71.0" text="Item Type:" />
+      <ComboBox fx:id="itemType" layoutX="128.0" layoutY="147.0" prefWidth="150.0" />
+      <Label layoutX="57.0" layoutY="198.0" prefHeight="18.0" prefWidth="71.0" text="Days:" />
+      <TextField fx:id="daysTotal" layoutX="128.0" layoutY="194.0" />
+      <Label layoutX="57.0" layoutY="246.0" prefHeight="0.0" prefWidth="71.0" text="Total Price:" />
+      <TextField fx:id="priceTotal" layoutX="128.0" layoutY="242.0" />
+      <Label layoutX="57.0" layoutY="296.0" prefHeight="0.0" prefWidth="71.0" text="Discount:" />
+      <TextField fx:id="discount" layoutX="128.0" layoutY="292.0" />
+      <DatePicker fx:id="date" layoutX="372.0" layoutY="292.0" />
+      <Label layoutX="291.0" layoutY="296.0" prefHeight="0.0" prefWidth="71.0" text="Check-Out:" />
+      <TextArea fx:id="billDetails" layoutX="50.0" layoutY="353.0" prefHeight="56.0" prefWidth="506.0" promptText="Bill Details" />
+      <Button layoutX="419.0" layoutY="443.0" mnemonicParsing="false" onAction="#generateBillBtn" prefHeight="26.0" prefWidth="139.0" text="Generate Bill" />
+      <Button layoutX="50.0" layoutY="443.0" mnemonicParsing="false" onAction="#calculateTotalBillBtn" prefHeight="26.0" prefWidth="100.0" text="Calculate Total" />
+      <TextField fx:id="showTotalAmount" layoutX="167.0" layoutY="443.0" promptText="Show Total Amount" />
+   </children>
 </AnchorPane>

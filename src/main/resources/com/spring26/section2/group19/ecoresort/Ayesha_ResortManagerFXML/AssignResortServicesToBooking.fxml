@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.controller.AssignResortServicesToBookingController">
+<AnchorPane prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.Ayesha.AssignResortServicesToBookingController">
    <children>
-      <Label layoutX="108.0" layoutY="24.0" prefHeight="36.0" prefWidth="384.0" text="Assign Resort Services To Booking">
+      <Label layoutX="109.0" layoutY="30.0" prefHeight="36.0" prefWidth="384.0" text="Assign Resort Services To Booking">
          <font>
             <Font size="25.0" />
          </font>
