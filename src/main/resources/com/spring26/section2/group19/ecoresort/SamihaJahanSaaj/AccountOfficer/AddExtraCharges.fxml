@@ -1,122 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.GenerateInvoicesController"
-            prefHeight="600.0" prefWidth="900.0">
+<AnchorPane prefHeight="420.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.AddExtraChargesController">
 
     <children>
+        <Text layoutX="250.0" layoutY="35.0" text="Add Extra Charges">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
 
-        <!-- 🔷 MAIN CONTAINER -->
-        <BorderPane AnchorPane.topAnchor="0.0"
-                    AnchorPane.bottomAnchor="0.0"
-                    AnchorPane.leftAnchor="0.0"
-                    AnchorPane.rightAnchor="0.0">
+        <Text layoutX="40.0" layoutY="80.0" text="Guest Billing Profile">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Text>
 
-            <!-- 🔷 TOP HEADER -->
-            <top>
-                <HBox spacing="20" style="-fx-background-color: #1E3A5F;">
-                    <padding>
-                        <Insets top="15" right="15" bottom="15" left="15"/>
-                    </padding>
+        <TableView fx:id="guestBillingTable" layoutX="40.0" layoutY="100.0" prefHeight="160.0" prefWidth="620.0">
+            <columns>
+                <TableColumn fx:id="guestIdColumn" prefWidth="150.0" text="Guest ID" />
+                <TableColumn fx:id="guestNameColumn" prefWidth="220.0" text="Guest Name" />
+                <TableColumn fx:id="balanceColumn" prefWidth="250.0" text="Current Balance" />
+            </columns>
+        </TableView>
 
-                    <Label text="Invoice Generation"
-                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+        <Text layoutX="40.0" layoutY="300.0" text="Charge Type" />
+        <TextField fx:id="chargeTypeTextField" layoutX="130.0" layoutY="285.0" prefWidth="180.0" />
 
-                    <Pane HBox.hgrow="ALWAYS"/>
+        <Text layoutX="340.0" layoutY="300.0" text="Charge Amount" />
+        <TextField fx:id="chargeAmountTextField" layoutX="450.0" layoutY="285.0" prefWidth="120.0" />
 
-                    <Label text="Account Officer" style="-fx-text-fill: white;"/>
-                </HBox>
-            </top>
+        <Button fx:id="addChargeButton" layoutX="590.0" layoutY="285.0" mnemonicParsing="false" onAction="#addChargeButton" text="Add Charge" />
 
-            <!-- 🔷 LEFT SIDEBAR -->
-            <left>
-                <VBox spacing="10" prefWidth="200"
-                      style="-fx-background-color: #2C3E50;">
-                    <padding>
-                        <Insets top="15" left="15" right="15" bottom="15"/>
-                    </padding>
+        <Text layoutX="40.0" layoutY="350.0" text="Updated Balance" />
+        <TextField fx:id="updatedBalanceTextField" editable="false" layoutX="150.0" layoutY="335.0" prefWidth="180.0" />
 
-                    <Button text="Dashboard" maxWidth="Infinity"/>
-                    <Button text="Invoices" maxWidth="Infinity"
-                            style="-fx-background-color: #34495E; -fx-text-fill: white;"/>
-                    <Button text="Payments" maxWidth="Infinity"/>
-                    <Button text="Reports" maxWidth="Infinity"/>
-                </VBox>
-            </left>
-
-            <!-- 🔷 CENTER CONTENT -->
-            <center>
-                <VBox spacing="20">
-                    <padding>
-                        <Insets top="20" right="20" bottom="20" left="20"/>
-                    </padding>
-
-                    <!-- 🟦 Booking Selection -->
-                    <TitledPane text="Select Guest Booking" expanded="true">
-                        <HBox spacing="15">
-                            <ComboBox fx:id="bookingComboBox" prefWidth="250"/>
-                            <Button text="Load Details" fx:id="loadBtn"/>
-                        </HBox>
-                    </TitledPane>
-
-                    <!-- 🟨 Billing Details -->
-                    <TitledPane text="Billing Details" expanded="true">
-                        <GridPane hgap="15" vgap="10">
-                            <padding>
-                                <Insets top="15" left="15" right="15" bottom="15"/>
-                            </padding>
-
-                            <Label text="Guest Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                            <TextField fx:id="guestNameField" editable="false"
-                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-
-                            <Label text="Room Charges:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                            <TextField fx:id="roomChargeField" editable="false"
-                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-
-                            <Label text="Service Charges:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-                            <TextField fx:id="serviceChargeField" editable="false"
-                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-
-                            <Label text="Tax:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-                            <TextField fx:id="taxField" editable="false"
-                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
-
-                            <Label text="Total Amount:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-                            <TextField fx:id="totalField" editable="false"
-                                       style="-fx-font-weight: bold;"
-                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-                        </GridPane>
-                    </TitledPane>
-
-                    <!-- 🟩 Invoice Preview -->
-                    <TitledPane text="Invoice Preview" expanded="true">
-                        <TextArea fx:id="invoicePreviewArea"
-                                  prefHeight="150"
-                                  editable="false"/>
-                    </TitledPane>
-
-                    <!-- 🟪 Actions -->
-                    <HBox spacing="15">
-                        <Button text="Generate Invoice" fx:id="generateBtn"
-                                style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
-
-                        <Button text="Print" fx:id="printBtn"/>
-
-                        <Button text="Download PDF" fx:id="downloadBtn"
-                                style="-fx-background-color: #2980B9; -fx-text-fill: white;"/>
-                    </HBox>
-
-                </VBox>
-            </center>
-
-        </BorderPane>
-
+        <Label fx:id="statusLabel" layoutX="40.0" layoutY="380.0" prefWidth="500.0" text="" />
+      <Button layoutX="608.0" layoutY="376.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
     </children>
-
 </AnchorPane>

@@ -2,105 +2,47 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
+<AnchorPane prefHeight="400.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.ResortManagement.ManageRoomPricingController"
-            prefHeight="400.0" prefWidth="600.0">
+            fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.ResortManagement.ManageRoomPricingController">
+
     <children>
 
-        <BorderPane AnchorPane.topAnchor="0.0"
-                    AnchorPane.bottomAnchor="0.0"
-                    AnchorPane.leftAnchor="0.0"
-                    AnchorPane.rightAnchor="0.0">
+        <Text layoutX="230.0" layoutY="40.0" text="Manage Room Pricing">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Text>
 
-            <!-- 🔷 HEADER -->
-            <top>
-                <HBox spacing="10" style="-fx-background-color: #2C3E50; -fx-padding: 12;">
-                    <Label text="Room Pricing Management"
-                           style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" />
+        <Text layoutX="40.0" layoutY="80.0" text="Current Room Prices">
+            <font>
+                <Font size="16.0"/>
+            </font>
+        </Text>
 
-                    <Region HBox.hgrow="ALWAYS"/>
+        <TableView fx:id="roomPricingTable" layoutX="40.0" layoutY="100.0" prefHeight="170.0" prefWidth="620.0">
+            <columns>
+                <TableColumn fx:id="roomTypeColumn" prefWidth="300.0" text="Room Type"/>
+                <TableColumn fx:id="priceColumn" prefWidth="320.0" text="Price"/>
+            </columns>
+        </TableView>
 
+        <Text layoutX="40.0" layoutY="310.0" text="Room Type"/>
+        <TextField fx:id="roomTypeTextField" layoutX="120.0" layoutY="295.0" prefWidth="180.0"/>
 
+        <Text layoutX="330.0" layoutY="310.0" text="New Price"/>
+        <TextField fx:id="priceTextField" layoutX="410.0" layoutY="295.0" prefWidth="120.0"/>
 
-                    <Button text="Refresh"/>
-                    <Button text="Save All"/>
-                </HBox>
-            </top>
+        <Button fx:id="updatePriceButton" layoutX="550.0" layoutY="295.0"
+                text="Update Price" onAction="#updatePriceButton"/>
 
-            <!-- 🔷 CENTER CONTENT -->
-            <center>
-                <VBox spacing="15" style="-fx-padding: 20;">
-
-                    <!-- Title -->
-                    <Label text="Manage Room Prices"
-                           style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-
-                    <!-- 🔶 TABLE VIEW (Event 2 - OP) -->
-                    <TableView fx:id="pricingTable" prefHeight="250">
-
-                        <columns>
-                            <TableColumn text="Room Type" prefWidth="150"/>
-                            <TableColumn text="Current Price" prefWidth="120"/>
-                            <TableColumn text="New Price" prefWidth="120"/>
-                        </columns>
-
-                    </TableView>
-
-                    <!-- 🔶 UPDATE SECTION (Event 3 - UID) -->
-                    <GridPane hgap="10" vgap="10">
-
-                        <Label text="Room Type:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-                        <ComboBox fx:id="roomTypeBox"
-                                  GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-
-                        <Label text="New Price:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-                        <TextField fx:id="priceField"
-                                   promptText="Enter new price"
-                                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
-
-                        <Button text="Update Price"
-                                GridPane.rowIndex="2"
-                                GridPane.columnIndex="1"/>
-                    </GridPane>
-
-                </VBox>
-            </center>
-
-            <!-- 🔷 RIGHT PANEL (INFO / STATUS) -->
-            <right>
-                <VBox spacing="10" prefWidth="200"
-                      style="-fx-background-color: #ECF0F1; -fx-padding: 15;">
-
-                    <Label text="Instructions"
-                           style="-fx-font-weight: bold;" />
-
-                    <Label text="• Select a room type"/>
-                    <Label text="• Enter new price"/>
-                    <Label text="• Click update"/>
-
-                    <Separator/>
-
-                    <Label text="Status"
-                           style="-fx-font-weight: bold;" />
-
-                    <Label fx:id="statusLabel" text="No changes yet"/>
-                </VBox>
-            </right>
-
-            <!-- 🔷 FOOTER -->
-            <bottom>
-                <HBox style="-fx-background-color: #BDC3C7; -fx-padding: 10;">
-                    <Label text="System ready"/>
-                </HBox>
-            </bottom>
-
-        </BorderPane>
+        <!-- Only Label for alert/status -->
+        <Label fx:id="statusLabel" layoutX="40.0" layoutY="350.0" prefWidth="500.0" text=""/>
 
     </children>
-
 </AnchorPane>
