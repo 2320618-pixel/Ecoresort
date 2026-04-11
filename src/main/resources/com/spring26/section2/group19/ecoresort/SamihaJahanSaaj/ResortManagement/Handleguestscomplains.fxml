@@ -1,14 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.ResortManagement.HandleguestscomplainsController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="600.0" prefWidth="900.0">
 
-</AnchorPane>
+      &lt;children&gt;
+
+        &lt;!-- Title --&gt;
+        &lt;Label text=&quot;Guest Complaints Management&quot;
+               layoutX=&quot;300&quot; layoutY=&quot;10&quot;
+               style=&quot;-fx-font-size: 18px; -fx-font-weight: bold;&quot; /&gt;
+
+        &lt;!-- Complaint List --&gt;
+        &lt;TableView fx:id=&quot;complaintTable&quot;
+                   layoutX=&quot;20&quot; layoutY=&quot;50&quot;
+                   prefWidth=&quot;400&quot; prefHeight=&quot;400&quot;&gt;
+
+            &lt;columns&gt;
+                &lt;TableColumn fx:id=&quot;colId&quot; text=&quot;ID&quot; prefWidth=&quot;50&quot;/&gt;
+                &lt;TableColumn fx:id=&quot;colGuest&quot; text=&quot;Guest Name&quot; prefWidth=&quot;120&quot;/&gt;
+                &lt;TableColumn fx:id=&quot;colIssue&quot; text=&quot;Issue&quot; prefWidth=&quot;150&quot;/&gt;
+                &lt;TableColumn fx:id=&quot;colStatus&quot; text=&quot;Status&quot; prefWidth=&quot;80&quot;/&gt;
+            &lt;/columns&gt;
+        &lt;/TableView&gt;
+
+        &lt;!-- Complaint Details Section --&gt;
+        &lt;Label text=&quot;Complaint Details&quot;
+               layoutX=&quot;450&quot; layoutY=&quot;50&quot;
+               style=&quot;-fx-font-weight: bold;&quot; /&gt;
+
+        &lt;TextArea fx:id=&quot;complaintDetailsArea&quot;
+                  layoutX=&quot;450&quot; layoutY=&quot;80&quot;
+                  prefWidth=&quot;400&quot; prefHeight=&quot;150&quot;
+                  promptText=&quot;Selected complaint details will appear here...&quot; /&gt;
+
+        &lt;!-- Assign Staff --&gt;
+        &lt;Label text=&quot;Assign to Staff:&quot;
+               layoutX=&quot;450&quot; layoutY=&quot;250&quot; /&gt;
+
+        &lt;ComboBox fx:id=&quot;staffComboBox&quot;
+                  layoutX=&quot;580&quot; layoutY=&quot;245&quot;
+                  prefWidth=&quot;200&quot; /&gt;
+
+        &lt;Button text=&quot;Assign&quot;
+                layoutX=&quot;450&quot; layoutY=&quot;290&quot;
+                prefWidth=&quot;100&quot;
+                onAction=&quot;#handleAssignComplaint&quot; /&gt;
+
+        &lt;!-- Status Update --&gt;
+        &lt;Label text=&quot;Status:&quot;
+               layoutX=&quot;450&quot; layoutY=&quot;350&quot; /&gt;
+
+        &lt;Label fx:id=&quot;statusLabel&quot;
+               layoutX=&quot;520&quot; layoutY=&quot;350&quot;
+               text=&quot;Pending&quot;
+               style=&quot;-fx-text-fill: red; -fx-font-weight: bold;&quot; /&gt;
+
+        &lt;Button text=&quot;Mark as Resolved&quot;
+                layoutX=&quot;450&quot; layoutY=&quot;380&quot;
+                onAction=&quot;#handleResolveComplaint&quot; /&gt;
+
+    &lt;/children&gt;
+&lt;/AnchorPane&gt;
