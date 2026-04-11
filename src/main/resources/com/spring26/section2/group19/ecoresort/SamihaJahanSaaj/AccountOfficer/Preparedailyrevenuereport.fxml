@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.PreparedailyrevenuereportController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="650.0" prefWidth="1100.0">
+
+    <children>
+
+        <!-- 🔷 MAIN CONTAINER -->
+        <BorderPane AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+
+            <!-- 🔷 HEADER -->
+            <top>
+                <HBox spacing="20" style="-fx-background-color: #1E3A5F;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Label text="Daily Revenue Report"
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <Pane HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Account Officer" style="-fx-text-fill: white;"/>
+                </HBox>
+            </top>
+
+            <!-- 🔷 SIDEBAR -->
+            <left>
+                <VBox spacing="10" prefWidth="200"
+                      style="-fx-background-color: #2C3E50;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Button text="Dashboard" maxWidth="Infinity"/>
+                    <Button text="Revenue Report" maxWidth="Infinity"
+                            style="-fx-background-color: #34495E; -fx-text-fill: white;"/>
+                    <Button text="Payments" maxWidth="Infinity"/>
+                    <Button text="Invoices" maxWidth="Infinity"/>
+                </VBox>
+            </left>
+
+            <!-- 🔷 MAIN CONTENT -->
+            <center>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" left="20" right="20" bottom="20"/>
+                    </padding>
+
+                    <!-- 🟦 EVENT 1 + 2 (UIE + OP) -->
+                    <TitledPane text="Transaction History" expanded="true">
+                        <TableView fx:id="transactionTable" prefHeight="250">
+
+                            <columns>
+                                <TableColumn text="Transaction ID" prefWidth="140"/>
+                                <TableColumn text="Guest Name" prefWidth="180"/>
+                                <TableColumn text="Amount" prefWidth="120"/>
+                                <TableColumn text="Payment Method" prefWidth="140"/>
+                                <TableColumn text="Date" prefWidth="140"/>
+                            </columns>
+
+                        </TableView>
+                    </TitledPane>
+
+                    <!-- 🟧 EVENT 3 (VR - Review) -->
+                    <TitledPane text="Review / Verify Transaction" expanded="true">
+                        <GridPane hgap="15" vgap="10">
+                            <padding>
+                                <Insets top="15" left="15" right="15" bottom="15"/>
+                            </padding>
+
+                            <Label text="Transaction ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="transactionIdField" editable="false"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Guest Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="guestNameField"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="amountField"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Payment Method:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="methodField"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                            <Label text="Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                            <TextField fx:id="dateField"
+                                       GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                        </GridPane>
+                    </TitledPane>
+
+                    <!-- 🟩 EVENT 4 (UID - Correction) -->
+                    <HBox spacing="15">
+                        <Button text="Update Entry" fx:id="updateBtn"
+                                style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
+
+                        <Button text="Reset" fx:id="resetBtn"/>
+
+                        <Button text="Refresh Data" fx:id="refreshBtn"/>
+                    </HBox>
+
+                </VBox>
+            </center>
+
+        </BorderPane>
+
+    </children>
 
 </AnchorPane>

@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.spring26.section2.group19.ecoresort.SamihaJahanSaaj.AccountOfficer.ProcessRefundsController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="650.0" prefWidth="1000.0">
+
+    <children>
+
+        <!-- 🔷 MAIN CONTAINER -->
+        <BorderPane AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+
+            <!-- 🔷 HEADER -->
+            <top>
+                <HBox spacing="20" style="-fx-background-color: #1E3A5F;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Label text="Process Refunds"
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <Pane HBox.hgrow="ALWAYS"/>
+
+                    <Label text="Account Officer" style="-fx-text-fill: white;"/>
+                </HBox>
+            </top>
+
+            <!-- 🔷 SIDEBAR -->
+            <left>
+                <VBox spacing="10" prefWidth="200"
+                      style="-fx-background-color: #2C3E50;">
+                    <padding>
+                        <Insets top="15" left="15" right="15" bottom="15"/>
+                    </padding>
+
+                    <Button text="Dashboard" maxWidth="Infinity"/>
+                    <Button text="Refunds" maxWidth="Infinity"
+                            style="-fx-background-color: #34495E; -fx-text-fill: white;"/>
+                    <Button text="Payments" maxWidth="Infinity"/>
+                    <Button text="Reports" maxWidth="Infinity"/>
+                </VBox>
+            </left>
+
+            <!-- 🔷 MAIN CONTENT -->
+            <center>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" left="20" right="20" bottom="20"/>
+                    </padding>
+
+                    <!-- 🟦 EVENT 1 (UIE) -->
+                    <TitledPane text="Cancelled Bookings" expanded="true">
+                        <TableView fx:id="cancelledTable" prefHeight="200">
+                            <columns>
+                                <TableColumn text="Booking ID" prefWidth="120"/>
+                                <TableColumn text="Guest Name" prefWidth="180"/>
+                                <TableColumn text="Paid Amount" prefWidth="140"/>
+                                <TableColumn text="Status" prefWidth="120"/>
+                            </columns>
+                        </TableView>
+                    </TitledPane>
+
+                    <!-- 🟨 EVENT 2 (DP - Calculation) -->
+                    <TitledPane text="Refund Calculation" expanded="true">
+                        <GridPane hgap="15" vgap="10">
+                            <padding>
+                                <Insets top="15" left="15" right="15" bottom="15"/>
+                            </padding>
+
+                            <Label text="Booking ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                            <TextField fx:id="bookingIdField" editable="false"
+                                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                            <Label text="Original Payment:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                            <TextField fx:id="originalAmountField" editable="false"
+                                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                            <Label text="Cancellation Fee:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                            <TextField fx:id="feeField"
+                                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                            <Label text="Refund Amount:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                            <TextField fx:id="refundAmountField" editable="false"
+                                       style="-fx-font-weight: bold;"
+                                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                        </GridPane>
+                    </TitledPane>
+
+                    <!-- 🟪 STATUS OUTPUT -->
+                    <HBox spacing="10">
+                        <Label text="Status:"/>
+                        <Label fx:id="statusLabel"
+                               text="Waiting for approval..."
+                               style="-fx-text-fill: orange;"/>
+                    </HBox>
+
+                    <!-- 🟩 EVENT 3 + 4 (UID + DP) -->
+                    <HBox spacing="15">
+                        <Button text="Approve Refund" fx:id="approveBtn"
+                                style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
+
+                        <Button text="Reject Refund" fx:id="rejectBtn"
+                                style="-fx-background-color: #E74C3C; -fx-text-fill: white;"/>
+
+                        <Button text="Refresh" fx:id="refreshBtn"/>
+                    </HBox>
+
+                </VBox>
+            </center>
+
+        </BorderPane>
+
+    </children>
 
 </AnchorPane>
