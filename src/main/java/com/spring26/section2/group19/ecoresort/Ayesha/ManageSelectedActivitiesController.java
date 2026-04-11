@@ -48,11 +48,11 @@ public class ManageSelectedActivitiesController
             alert.setTitle("No Selection");
             alert.setHeaderText(null);
             alert.setContentText("Please select an activity to remove.");
-            alert.showAndWait();
     }
 
     @javafx.fxml.FXML
     public void saveBtn(ActionEvent actionEvent) {
-        String selectedActivity = changeActivity.getValue();
+            String selectedActivity = changeActivity.getValue();
         }
+    }
 }
