@@ -10,29 +10,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="534.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.">
+<AnchorPane prefHeight="534.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.spring26.section2.group19.ecoresort.Ayesha.UpdateOrCancelBookingRequestController">
    <children>
       <Label layoutX="181.0" layoutY="44.0" prefHeight="38.0" prefWidth="268.0" text="Update / Cancel Booking Request">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="61.0" layoutY="255.0" prefHeight="200.0" prefWidth="485.0">
+      <TableView fx:id="tableView" layoutX="61.0" layoutY="255.0" prefHeight="200.0" prefWidth="485.0">
         <columns>
-          <TableColumn prefWidth="125.5999755859375" text="Date" />
-          <TableColumn prefWidth="165.5999755859375" text="No Of Guests" />
-            <TableColumn prefWidth="194.4000244140625" text="Requrements" />
+          <TableColumn fx:id="dateClm" prefWidth="125.5999755859375" text="Date" />
+          <TableColumn fx:id="noOfGuestClm" prefWidth="165.5999755859375" text="No Of Guests" />
+            <TableColumn fx:id="requirementsClm" prefWidth="194.4000244140625" text="Requrements" />
         </columns>
       </TableView>
       <Label layoutX="61.0" layoutY="82.0" prefHeight="18.0" prefWidth="82.0" text="Update Date:" />
-      <DatePicker layoutX="167.0" layoutY="78.0" />
+      <DatePicker fx:id="updateDate" layoutX="167.0" layoutY="78.0" />
       <Label layoutX="61.0" layoutY="120.0" prefHeight="18.0" prefWidth="98.0" text="Update Guest No:" />
-      <TextField layoutX="167.0" layoutY="116.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button layoutX="61.0" layoutY="479.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Update Request" />
-      <Button layoutX="380.0" layoutY="479.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Cancel Request" />
+      <TextField fx:id="updateGuestNo" layoutX="167.0" layoutY="116.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button fx:id="updateReqBtn" layoutX="61.0" layoutY="479.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Update Request" />
+      <Button fx:id="cancelreqBtn" layoutX="380.0" layoutY="479.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Cancel Request" />
       <Label layoutX="61.0" layoutY="160.0" prefHeight="18.0" prefWidth="118.0" text="Update requremants:" />
-      <TextArea layoutX="179.0" layoutY="158.0" prefHeight="38.0" prefWidth="366.0" />
-      <Button layoutX="231.0" layoutY="207.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="Save" />
+      <TextArea fx:id="updateRequirements" layoutX="179.0" layoutY="158.0" prefHeight="38.0" prefWidth="366.0" />
+      <Button layoutX="231.0" layoutY="207.0" mnemonicParsing="false" onAction="#saveBtn" prefHeight="26.0" prefWidth="166.0" text="Save" />
    </children>
 </AnchorPane>
