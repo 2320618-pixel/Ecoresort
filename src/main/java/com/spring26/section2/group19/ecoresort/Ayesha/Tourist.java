@@ -1,20 +1,25 @@
 package com.spring26.section2.group19.ecoresort.Ayesha;
 
-public class Tourist {
+import java.time.LocalDate;
+
+import java.io.Serializable;
+
+public class Tourist implements Serializable {
     private String name;
     private String phone;
-    private String email;
+    private String nid;
     private String gender;
-    private String dateOfBirth;
-    private String preferences;
+    private LocalDate date;
+    private String address;
 
-    public Tourist(String name, String phone, String email, String gender, String dateOfBirth, String preferences) {
+
+    public Tourist(String name, String phone, String nid, String gender, LocalDate date, String address) {
         this.name = name;
         this.phone = phone;
-        this.email = email;
+        this.nid = nid;
         this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
-        this.preferences = preferences;
+        this.date = date;
+        this.address = address;
     }
 
     public String getName() {
@@ -33,12 +38,12 @@ public class Tourist {
         this.phone = phone;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNid() {
+        return nid;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setNid(String nid) {
+        this.nid = nid;
     }
 
     public String getGender() {
@@ -49,20 +54,20 @@ public class Tourist {
         this.gender = gender;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public String getPreferences() {
-        return preferences;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPreferences(String preferences) {
-        this.preferences = preferences;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
@@ -70,10 +75,10 @@ public class Tourist {
         return "Tourist{" +
                 "name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
+                ", nid='" + nid + '\'' +
                 ", gender='" + gender + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", preferences='" + preferences + '\'' +
+                ", date=" + date +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

@@ -21,7 +21,7 @@ public class logInController
     }
 
     @javafx.fxml.FXML
-    public void logInButton(ActionEvent actionEvent)throws IOException {
+    public void logInButton(ActionEvent actionEvent) throws IOException {
         String username = userName.getText();
         String passwords = password.getText();
 
@@ -56,7 +56,8 @@ public class logInController
         }
 
         if (username.equals("TourGuide") && passwords.equals("5678")) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/spring26/section2/group19/Ecoresort/farzana/TourGuide.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+                    "/com/spring26/section2/group19/Ecoresort/farzana/TourGuide.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) userName.getScene().getWindow();
             stage.setTitle("Hello!");
@@ -66,7 +67,8 @@ public class logInController
         }
 
         if (username.equals("AccountOfficer") && passwords.equals("1234")) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com/spring26/section2/group19/ecoresort/SamihaJahanSaaj/AccountOfficer/AccountOfficerDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+                    "com/spring26/section2/group19/ecoresort/SamihaJahanSaaj/AccountOfficer/AccountOfficerDashboard.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) userName.getScene().getWindow();
             stage.setTitle("Hello!");
@@ -76,7 +78,30 @@ public class logInController
         }
 
         if (username.equals("ResortManagement") && passwords.equals("1234")) {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("com/spring26/section2/group19/ecoresort/SamihaJahanSaaj/ResortManagement/ResortManagementDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+                    "com/spring26/section2/group19/ecoresort/SamihaJahanSaaj/ResortManagement/ResortManagementDashboard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) userName.getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+        if (username.equals("ResortManager") && passwords.equals("1234")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+                    "/com/spring26/section2/group19/ecoresort/Ayesha_ResortManagerFXML/ResortManagerDashBoard.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = (Stage) userName.getScene().getWindow();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
+
+        }
+
+        if (username.equals("Tourist") && passwords.equals("5678")) {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(
+                    "/com/spring26/section2/group19/ecoresort/Ayesha_TouristFXML/TouristDashBoard.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage = (Stage) userName.getScene().getWindow();
             stage.setTitle("Hello!");

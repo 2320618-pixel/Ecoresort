@@ -5,8 +5,6 @@ module com.spring26.section2.group19.ecoresort {
     requires java.desktop;
 
 
-
-
     opens com.spring26.section2.group19.ecoresort to javafx.fxml;
     opens com.spring26.section2.group19.ecoresort.Security_Officer to javafx.fxml;
     exports com.spring26.section2.group19.ecoresort;

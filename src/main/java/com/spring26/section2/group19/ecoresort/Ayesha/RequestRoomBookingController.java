@@ -25,23 +25,11 @@ public class RequestRoomBookingController
 
     @javafx.fxml.FXML
     public void initialize() {
-        roomType.getItems().addAll("Single", "Double", "Suite");
-        roomType.setValue("Single");
-        guestNum.setText("1");
 
     }
 
     @javafx.fxml.FXML
     public void submitRequestBtn(ActionEvent actionEvent) {
-        	String bookingIDText = bookingID.getText();
-            String phoneText = phone.getText();
-            String roomTypeText = roomType.getValue().toString();
-            int numberOfGuests = Integer.parseInt(guestNum.getText());
-            String checkInDate = checkIn.getValue().toString();
-            String checkOutDate = checkOut.getValue().toString();
-            String specialRequestText = specialRequest.getText();
-
-            RoomBookingRequest request = new RoomBookingRequest(bookingIDText, phoneText, roomTypeText, numberOfGuests, checkInDate, checkOutDate, specialRequestText);
 
 
     }

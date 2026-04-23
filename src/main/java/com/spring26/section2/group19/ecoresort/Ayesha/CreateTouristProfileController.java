@@ -28,11 +28,5 @@ public class CreateTouristProfileController
 
     @javafx.fxml.FXML
     public void saveBtn(ActionEvent actionEvent) {
-        String name = nametext.getText();
-        String phone = phonetext.getText();
-        String email = emailText.getText();
-        String gender = ((javafx.scene.control.RadioButton) radio.getSelectedToggle()).getText();
-        String dateOfBirth = date.getValue().toString();
-        String preferences = preferancesTxtArea.getText();
     }
 }

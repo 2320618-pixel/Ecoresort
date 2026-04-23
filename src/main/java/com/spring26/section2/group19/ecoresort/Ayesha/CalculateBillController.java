@@ -50,14 +50,6 @@ public class CalculateBillController
 
     @javafx.fxml.FXML
     public void calculateTotalBillBtn(ActionEvent actionEvent) {
-        String checkOutDate = date.getValue().toString();
-        String bookingIDText = bookingID.getText();
-        String itemTypeText = itemType.getValue().toString();
-        int days = Integer.parseInt(daysTotal.getText());
-        double pricePerDay = Double.parseDouble(priceTotal.getText());
-        double discountValue = Double.parseDouble(discount.getText());
-        double totalAmount = (pricePerDay * days) - discountValue;
-        String billDetailsText = billDetails.getText();
 
     }
 }
